@@ -309,8 +309,6 @@ export default {
       this.getWaterQuality();
     }
 	
-	
-
 
 
     let bannerList=[]
@@ -545,6 +543,7 @@ export default {
       let res = await getRemind([]);
       this.loading.close();
       if(res.code == 200){
+
         this.signInHide=res.result.checkinStatus==1?true:false;
 		//自动签到
 		
@@ -552,6 +551,7 @@ export default {
 			console.log('checkIn')
 			!this.messageShow && checkIn()
 		}
+
         this.giftNum =res.result.orders;
         this.integralNum = res.result.score;
         res.result['date'] = parseTime(new Date(), '{y}/{m}/{d} {h}:{i}');

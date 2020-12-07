@@ -215,9 +215,9 @@ export default {
     },
     //手机注册提交
     onSubmit(){
-
 		this.showCodeError=true;
 		this.showError=true;
+
       this.$refs['form'].validate(async(valid) => {
         if(valid){
 
@@ -250,9 +250,11 @@ export default {
       })
     },
     // 修改手机号
+
     editPhone(){
 		this.showCodeError=true;
 		this.showError=true;
+
       this.$refs['form'].validate(async(valid) => {
         if(valid){
           // let data = {

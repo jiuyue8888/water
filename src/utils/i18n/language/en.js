@@ -572,7 +572,9 @@ module.exports={
 	newFont:{
 		font1:'Please select at least one item',
 		font2:'Binding Succeeded',
+
 		font3:'Success',
+
 		font4:'No stock',
 		font5:'Gift exchange times have reached the maximum',
 		font6:'Please select the area(s) you wish to subscribe the water suspension notice (multiple selection)',

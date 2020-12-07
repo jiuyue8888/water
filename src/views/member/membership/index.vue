@@ -121,7 +121,9 @@
       <!-- 底部 -->
       <span slot="footer" class="dialog-footer">
         <el-button round @click="emailActivateShow = false">{{$t("serviceSubscribe.font14")}}</el-button>
+
         <el-button round type="primary" @click="emailActivate">{{$t("billsPdf.font2")}} {{ emailBtnText }}</el-button>
+
       </span>
     </el-dialog>
 
@@ -179,9 +181,9 @@ import Header from '@/components/Header'
 
 
 
-
 export default {
   name: 'memberMembership',
+
   data(){
 	  const validateEmail = (rule, value, callback) => {
 	    if(value === ''){
@@ -192,6 +194,7 @@ export default {
 	      callback();
 	    }
 	  };
+
     return {
       regionList:[],
       statementShow:false,

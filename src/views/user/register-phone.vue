@@ -42,7 +42,9 @@
           <div class="text item" v-html='$t("registerPhone.font18")'></div>
         </el-card>
         <span slot="footer" class="dialog-footer">
+
           <el-button round type="primary" @click="statementShow = false">{{$t('dashboard.font13')}}</el-button>
+
         </span>
       </el-dialog>
 
@@ -59,12 +61,16 @@
               @close="noScroll('remove')"
               center>
         <el-card class="box-card" shadow="never" :body-style="{padding:'10px'}">
+
           <div class="text item" v-html='$t("billsPayment.font19")'>
+
         
           </div>
         </el-card>
         <span slot="footer" class="dialog-footer">
+
           <el-button round type="primary" @click="electronicShow = false">{{$t('dashboard.font13')}}</el-button>
+
         </span>
       </el-dialog>
 

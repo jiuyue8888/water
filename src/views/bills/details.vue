@@ -887,10 +887,12 @@
         }
         .red{
           color: #FD5252;
+
         }
 		.green{
 			color: #9DCB44;
 		}
+
         .yellow{
           padding-left: 5px;
           color:#F1C06A;

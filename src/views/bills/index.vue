@@ -302,11 +302,12 @@ export default {
     WxBill : WxBill,
     Header : Header,
   },
+
   created(){
 	  this.changeData();
     this.getBillList();
     this.$share();
-	
+
   },
   methods:{
     idTypeNameInput(){
@@ -506,6 +507,7 @@ export default {
           this.isDisabled = false;
         }
       })
+
     },
 	async changeData(){
 		
@@ -525,10 +527,12 @@ export default {
 		
 	},
 
+
     //显示"提示不是登记用户"
     async showNoDeng(newBodyNb){
 
       this.changeData();
+
 
       let uRemindsList =RemindRes.result.uReminds || [];
       let oremindsList = RemindRes.result.oreminds || [];
