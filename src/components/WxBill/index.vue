@@ -118,6 +118,7 @@
 					}
 
 					if (res.code == 200) {
+						console.log(boolean)
 						if (boolean) {
 							if (this.dialogContent.type == 3 || this.dialogContent.type == 4) {
 								this.$message(this.$t('wxBill.font13'));
@@ -129,7 +130,7 @@
 							this.WeChatBillShow = false;
 						} else {
 							if (this.dialogContent.type == 2) {
-								this.$message(this.$t('newFont.font10'));
+								this.$message(this.$t('newFont.font11'));
 							} else {
 								this.$message(this.$t('newFont.font11'));
 							}

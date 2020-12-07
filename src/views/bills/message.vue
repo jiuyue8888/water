@@ -7,10 +7,10 @@
     <!-- 主体内容 -->
     <div class="body">
       <!-- 更新日期 -->
-      <div class="date" v-if="list.length !== 0">{{ date }} {{$t("billsMessage.font1")}}</div>
+      <div class="date" v-if="messageList.length !== 0">{{ date }} {{$t("billsMessage.font1")}}</div>
       <div class="date" v-else>{{$t("billsMessage.font2")}}</div>
       <!-- 列表 -->
-      <div class="list" v-for="(item,index) in list" :key="index">
+      <div class="list" v-for="(item,index) in messageList" :key="index">
         <!-- 标题 -->
         <div class="title">
           <h2>● {{ item.billAmount <= 10 ? $t("billsMessage.font3") : $t("billsMessage.font4") }}</h2>
@@ -25,6 +25,7 @@
 
 <script>
 import Header from '@/components/Header'
+import { getRemind } from '@/api/bill'
 
 
 export default {
@@ -34,17 +35,42 @@ export default {
   },
   data(){
     return {
-      date: sessionStorage.remindList ? JSON.parse(sessionStorage.remindList).date : '',
-      messageList:sessionStorage.remindList ? JSON.parse(sessionStorage.remindList).uReminds : []
+      date: sessionStorage.remindListDate ? sessionStorage.remindListDate : '',
+      messageList:[{
+		  billAmount:0,
+		  aliasLb:false,
+		  warnBodyNb:'',
+		  acctStatus:''
+	  }]
     }
   },
   computed: {
-    list(){
-      return this.messageList.filter(item => { return item.acctStatus !== '' && item.acctStatus !== null })
-    }
+    	
   },
-  created() {
+  async created() {
     this.$share();
+    const that = this;
+    let res = await getRemind([]);	  	
+    if(res.code == 200){	  	  
+      sessionStorage.remindList = JSON.stringify(res.result);
+      that.messageList = res.result.uReminds;
+      
+    }
+	
+  },
+  methods:{
+	  async changeData(){
+		  const that = this;
+	  	let res = await getRemind([]);	  	
+	  	if(res.code == 200){	  	  
+	  	  sessionStorage.remindList = JSON.stringify(res.result);
+	  	  this.messageList = res.result.uReminds;
+		  //that.list()
+	  	}	  	
+	  },
+	  list(){
+	    return this.messageList.filter(item => { return item.acctStatus !== '' && item.acctStatus !== null })
+	  }
   }
 }
 </script>

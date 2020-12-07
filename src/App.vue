@@ -86,12 +86,28 @@
 	}
 	*{
 		word-break: break-word;
-		word-break: keep-all;
+		
 	}
 	.hide .el-form-item__error{
 		display: none;
 	}
 	.show .el-form-item__error{
 		display: block;
+	}
+	.underline input,
+	.el-form-item__label{
+		line-height: 20px!important;
+		border-bottom: none!important;
+		padding: 0!important;
+	}
+	.el-form-item__content{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-left: 0!important;
+	}
+	.el-form-item{
+		display: flex;
+		align-items: center;
 	}
 </style>

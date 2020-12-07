@@ -21,7 +21,7 @@
       <div class="title">{{$t('registerPhone.font16')}}<span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'"'}}</span><span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'"'}}</span></div>
       
       <!-- 填写邮箱 -->
-      <el-form ref="form" :rules="rules" :model="form" label-width="82px">
+      <el-form ref="form" :rules="rules" :model="form" label-width="100px">
         <el-form-item :label='$t("registerEmail.font1")' prop="email">
           <el-input class="underline" v-model="form.email" :placeholder='$t("registerEmail.font3")'></el-input>
         </el-form-item>
@@ -70,7 +70,7 @@
               @close="noScroll('remove')"
               center>
        <el-card class="box-card" shadow="never" :body-style="{padding:'10px'}">
-         <div class="text item" v-html='$t("registerPhone.font20")'>
+         <div class="text item" v-html='$t("billsPayment.font19")'>
        
          </div>
        </el-card>
@@ -256,6 +256,10 @@ export default {
     height: 24px;
   }
 }
+.el-form-item{
+	border-bottom: 1px solid #DCDFE6;
+}
+
 /*内容*/
 .body{
   background:rgba(255,255,255,1);

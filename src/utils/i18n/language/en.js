@@ -140,7 +140,7 @@ module.exports={
         font7: 'Bill Enquiry',
     },
     serviceSubscribe: {
-        font1: 'Planed Water Suspension Notice Subscription',
+        font1: 'Planned Water Suspension Notice Subscription',
         font2: 'Close',
         font3: 'Notification according to the Policy No.',
         font4: 'Subscription Area(s)',
@@ -151,15 +151,13 @@ module.exports={
         font9: 'Please select the area(s)',
         font10:'Please read the Terms of Service before using the Service',
         font11:'Success ',
-        font12:`
-		1. The Macao Water Supply Company Limited (hereinafter referred to as ‘Macao Water’) provide the planed water suspension notice subscription service through WeChat official account.The applicant (hereinafter referred to as ‘User’) can not be a registered customer of The Macao Water Supply Company Limited (hereinafter referred to as ‘Macao Water’).
-		<br/>2.When subscribe to official Macao Water WeChat account and register as a member,the user may able to activate the planed water suspension notice subscription through WeChat.
-		<br/>3. The user must provide Macao Water with complete, accurate and up-to-date information when registering for the Service.
-		<br/>4.Macao Wate will sent the planed water suspension notice in time,but there is inevitable to delay for network delay、system reason and any other reason.
-		<br/>5.Macao Wate reserve the right to cancel the presentment of  Planed Water Suspension Notice Subscription at any time.
-		<br/>6.Macao Water reserves the right to modify or amend these terms and conditions without prior notice.
-		<br/>7.All personal data collected by Macao Water through the Service application will be used for application processing and future correspondence. The User has the right to request access to, correct or update their personal information held by Macao Water. For enquiries, please call the Customer Hotline at (853) 2822 0088 or visit the Macao Water Customer Service Centre.`,
-		font13:'I understand and agree to the above Terms and Conditions of the Service',
+        font12:`1.The Macao Water Supply Company Limited (hereinafter referred to as ‘Macao Water’) provides ‘Notification of Planned Water Suspension’ to users via its official WeChat account. ‘Users’ refer to individuals who apply for ‘Notification of Planned Water Suspension’ service with Macao Water, regardless of whether or not they are registered customers of Macao Water.
+<br/>2.When users follow the official WeChat account and register for membership, they can choose to subscribe to the notification service via WeChat. 
+<br/>3.Users must provide Macao Water with accurate, complete, and up-to-date registration information.
+<br/>4.Macao Water promises to provide timely messages through the ‘Notification of Planned Water Suspension’ service, but does not guarantee that it can completely avoid delays caused by network transmission, computer systems, or a force majeure.
+<br/>5.Macao Water reserves the right to suspend or terminate the ‘Notification of Planned Water Suspension’ service on WeChat without prior notice.
+<br/>6.Macao Water reserves the right to change and modify the terms and conditions at any time without prior notice.
+<br/>7. The personal data collected by Macao Water through this service will be used for processing applications and future communication. Applicants can apply to access, correct or update their personal data registered with Macao Water according to law. For details, please call the customer hotline at (853) 2822 0088 or visit the Macao Water Customer Service Centre for enquiries.`,
         font14:'Cancel',
         font15:'Activate',
         font16:'You are canceling the Water <br/>Suspension Notice Subscription.',
@@ -581,8 +579,8 @@ module.exports={
 		font7:'Macao port of Hong Kong-Zhuhai-Macao Bridge',
 		font8:'Macao Port Management Office of Hong Kong-Zhuhai-Macao Bridge',
 		font9:'Join the game',
-		font10:'Water Cousumption Notification is canceled.',
-		font11:'Water Consumption Notification is terminated',
+		font11:'Water Cousumption Notification is canceled.',
+		font10:'Water Consumption Notification is activated.',
 	},
 	image:{
 		img1:'img2',

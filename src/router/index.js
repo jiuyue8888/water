@@ -12,7 +12,7 @@ export const constantRoutes = [
         path: '/',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: {title: '智慧水務'}
+        meta: {title: 'MacaoWater'}
     },
     {
         path: '/user',

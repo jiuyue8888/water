@@ -549,13 +549,14 @@ export default {
 		
 		if(!this.signInHide){
 			console.log('checkIn')
-			!this.messageShow && checkIn()
+			!this.messageShow && this.checkIn()
 		}
 
         this.giftNum =res.result.orders;
         this.integralNum = res.result.score;
         res.result['date'] = parseTime(new Date(), '{y}/{m}/{d} {h}:{i}');
         sessionStorage.remindList = JSON.stringify(res.result);
+        sessionStorage.remindListDate = parseTime(new Date(), '{y}/{m}/{d} {h}:{i}');
         if(res.result.uReminds && res.result.uReminds.length != 0){
           this.billInfoShow = true;
           let uRemindsCk = Cookies.get('uReminds') ? Cookies.get('uReminds').split(',') : [];

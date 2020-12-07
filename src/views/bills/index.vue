@@ -532,7 +532,7 @@ export default {
     async showNoDeng(newBodyNb){
 
       this.changeData();
-
+	  let RemindRes = await getRemind([]);
 
       let uRemindsList =RemindRes.result.uReminds || [];
       let oremindsList = RemindRes.result.oreminds || [];
