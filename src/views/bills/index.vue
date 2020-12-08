@@ -211,27 +211,28 @@ import Header from '@/components/Header'
 import { validChinese,validNumberAndLetter } from '@/utils/validate'
 import { Popup, Picker } from 'vant';
 
-let validateIdName = (rule, value, callback) => {
-  if (!validChinese(value)) {
-    callback(new Error('請輸入中文'));
-  } else {
-    callback();
-  }
-};
 
-let validateIdName2 = (rule, value, callback) => {
-  if (!value) {
-    callback(new Error(this.$t("bills.font25")));
-  }else if (validNumberAndLetter(value)) {
-    callback(new Error(this.$t("memberGiftMyGift.font23")));
-  } else {
-    callback();
-  }
-};
 
 export default {
   name: 'Bills',
   data(){
+	  let validateIdName = (rule, value, callback) => {
+	    //if (!validChinese(value)) {
+	     // callback(new Error('請輸入中文'));
+	    //} else {
+	      callback();
+	    //}
+	  };
+	  
+	  let validateIdName2 = (rule, value, callback) => {
+	    if (!value) {
+	      callback(new Error(this.$t("bills.font25")));
+	    }else if (validNumberAndLetter(value)) {
+	      callback(new Error(this.$t("memberGiftMyGift.font23")));
+	    } else {
+	      callback();
+	    }
+	  };
     return {
       memberNb:sessionStorage.memberNb,
       contractNo:'',

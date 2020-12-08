@@ -368,6 +368,9 @@
 			box-sizing: border-box;
 			margin-right: 10px;
 		}
+		li:nth-child(1){
+			width: 90px;
+		}
         li.active {
 			
             color: #364973;

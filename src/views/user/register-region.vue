@@ -19,18 +19,19 @@
     <div class="body">
 
       <!-- 标题 -->
-      <div class="title">倘若遇上供水突發事件，註冊會員可及時接收供水公告。因此，您可以選擇所需要訂閱的區域 (可多選)</div>
+      <div class="title">{{$t('newFont.font12')}}</div>
 
       <!-- 填写地区 -->
       <div class="region">
         <el-checkbox-group v-model="region">
-          <div v-for="item in regionList"><el-checkbox :label="item.id" :key="item.id" border>{{item.value=='港珠澳大橋澳門口岸'?'港珠澳大橋澳門口岸管理區':item.value}}</el-checkbox></div>
+          <div v-for="item in regionList"><el-checkbox :label="item.id" :key="item.id" border>
+		  {{item.value==$t('newFont.font7')?$t('newFont.font8'):item.value}}</el-checkbox></div>
         </el-checkbox-group>
       </div>
 
       <!-- 下一步 -->
       <div class="next-step">
-        <el-button class="deep-blue" @click="onSubmit">提交</el-button>
+        <el-button class="deep-blue" @click="onSubmit">{{$t('registerPhone.font3')}}</el-button>
       </div>
 
     </div>
@@ -39,16 +40,16 @@
     <el-dialog
             :center="true"
             :show-close="false"
-            title="服務確認"
+            :title="$t('newFont.font16')"
             custom-class="regionShow"
             :visible.sync="regionShow"
             @open="noScroll('add')"
             @close="noScroll('remove')"
             width="80%">
-      <span>如不選擇任何一區域，您將無法收到某個區域的停水通知，但當出現城市級別緊急情況時，我們仍然將發送通知信息給您。</span>
+      <span>{{$t('newFont.font13')}}</span>
       <span slot="footer" class="dialog-footer">
-        <el-button round @click="onRegister">確認註冊</el-button>
-        <el-button round type="primary" @click="regionShow = false">重新選擇</el-button>
+        <el-button round @click="onRegister">{{$t('newFont.font14')}}</el-button>
+        <el-button round type="primary" @click="regionShow = false">{{$t('newFont.font15')}}</el-button>
       </span>
     </el-dialog>
   </div>

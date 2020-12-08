@@ -91,27 +91,28 @@ import { verifyEmailApi } from '@/api/user'
 import { setToken,getToken } from '@/utils/auth'
 
 
-var validateEmail = (rule, value, callback) => {
-  if(value === ''){
-    callback(new Error(this.$t('registerEmail.font7')));
-  }else if (!validEmail(value)) {
-    callback(new Error(this.$t('registerEmail.font8')));
-  } else {
-    callback();
-  }
-};
 
-const validatePassword = (rule, value, callback) => {
-  if (value.length < 6) {
-    callback(new Error(this.$t('registerEmail.font9')))
-  } else {
-    callback()
-  }
-}
 
 export default {
   name: 'RegisterPhone',
   data(){
+	  var validateEmail = (rule, value, callback) => {
+	    if(value === ''){
+	      callback(new Error(this.$t('registerEmail.font7')));
+	    }else if (!validEmail(value)) {
+	      callback(new Error(this.$t('registerEmail.font8')));
+	    } else {
+	      callback();
+	    }
+	  };
+	  
+	  const validatePassword = (rule, value, callback) => {
+	    if (value.length < 6) {
+	      callback(new Error(this.$t('registerEmail.font9')))
+	    } else {
+	      callback()
+	    }
+	  }
     return {
       statementCbox: false,
       statementShow: false,

@@ -915,7 +915,7 @@ export default {
       width: 25%;
       text-align: center;
       margin-bottom: 15px;
-      font-size: 14px;
+      font-size: 13px;
       
     }
     .svg-icon{
