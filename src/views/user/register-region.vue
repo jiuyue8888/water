@@ -100,7 +100,8 @@
       },
       //确认注册
       async onRegister(){
-        let phone = this.$route.query.phone,
+		 
+        let phone = this.$route.query.phone?this.$route.query.phone:window.localStorage.getItem('zcphone'),
                 email = this.$route.query.email,
                 pass = this.$route.query.pass,
                 bindToken = this.$route.query.bindToken,

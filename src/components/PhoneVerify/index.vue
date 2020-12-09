@@ -225,6 +225,7 @@ export default {
             this.$message(this.$t('registerEmail.font10'));
             return false;
           }
+			window.localStorage.setItem('zcphone',this.form.phone)
 
           let data = {
             verifyCode : this.form.code,
@@ -233,6 +234,8 @@ export default {
           }
           let res = await verifyCode(data);
           if(res.code == 200){
+			  
+			  
             this.$router.push({
               path:'/user/register-region',
               query:{

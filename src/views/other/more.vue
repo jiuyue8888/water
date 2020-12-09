@@ -366,7 +366,7 @@
 			-webkit-box-align: center;
 			height: 100%;
 			box-sizing: border-box;
-			margin-right: 10px;
+			margin-right: 0px;
 		}
 		li:nth-child(1){
 			width: 90px;
