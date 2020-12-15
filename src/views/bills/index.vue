@@ -66,7 +66,7 @@
       @close="closedAddShow"
       center>
       <!-- 填写合同信息 -->
-      <el-form ref="form" class="bills-verify" :rules="rules" :model="form" label-width="95px">
+      <el-form ref="form" class="bills-verify" :rules="rules" :model="form" label-width="110px">
         <el-form-item prop="bodyNb" :label='$t("bills.font1")'>
 <!--          <el-input class="underline" v-model.number="form.bodyNb" placeholder="輸入合同號碼"></el-input>-->
           <el-input class="underline" type="number" v-model="form.bodyNb" :placeholder='$t("bills.font12")'></el-input>

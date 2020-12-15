@@ -21,12 +21,12 @@
             <template v-if="stepsIndex==0">
                 <!-- 标题 -->
                 <div class="title">{{$t('registerPhone.font16')}}
-                <span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'"'}}</span>
-                <span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'"'}}</span>
+                <span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'》'}}</span>
+                <span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'》'}}</span>
                 </div>
 
                 <!-- 填写邮箱 -->
-                <el-form ref="form" :rules="rules" :model="form" label-width="82px">
+                <el-form ref="form" :rules="rules" :model="form" label-width="160px">
                     <el-form-item :label='$t("forgotPassword.font16")' prop="email">
                         <el-input class="underline" v-model="form.email" :placeholder='$t("forgotPassword.font17")'></el-input>
                     </el-form-item>
@@ -34,8 +34,8 @@
                 <!-- 下一步 -->
                 <div class="next-step">
                     <div class="statement"><el-checkbox v-model="statementCbox">{{$t("registerEmail.font6")}}</el-checkbox>
-                	<span class="text" @click="lockStatement">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'"'}}</span><br>
-                	<span class="text" @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'"'}}</span></div>
+                	<span class="text" @click="lockStatement">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'》'}}</span><br>
+                	<span class="text" @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'》'}}</span></div>
                     <el-button class="deep-blue" round @click="onSubmitSendCode">{{$t("forgotPassword.font1")}}</el-button>
                 </div>
             </template>
@@ -155,44 +155,46 @@
     import {setToken, getToken} from '@/utils/auth'
 
 
-    var validateEmail = (rule, value, callback) => {
-        if (value === '') {
-            callback(new Error(this.$t("registerEmail.font7")));
-        } else if (!validEmail(value)) {
-            callback(new Error(this.$t("registerEmail.font8")));
-        } else {
-            callback();
-        }
-    };
-
-    const validateEmailCode = (rule, value, callback) => {
-        if (value==='') {
-            callback(new Error(this.$t("forgotPassword.font7")))
-        } else {
-            callback()
-        }
-    }
-    const validatePasswordA = (rule, value, callback) => {
-        if (value==='') {
-            callback(new Error(this.$t("forgotPassword.font9")))
-        }else if(value.length < 6){
-            callback(new Error(this.$t("forgotPassword.font18")))
-        }else {
-            callback()
-        }
-    }
-    const validatePasswordB = (rule, value, callback) => {
-        if (value==='') {
-            callback(new Error(this.$t("forgotPassword.font12")))
-        }else if(value.length < 6){
-            callback(new Error(this.$t("forgotPassword.font18")))
-        } else {
-            callback()
-        }
-    }
-    export default {
+    
+	export default {
         name: 'RegisterPhone',
         data() {
+			var validateEmail = (rule, value, callback) => {
+			    if (value === '') {
+			        callback(new Error(this.$t("registerEmail.font7")));
+			    } else if (!validEmail(value)) {
+			        callback(new Error(this.$t("registerEmail.font8")));
+			    } else {
+			        callback();
+			    }
+			};
+			
+			const validateEmailCode = (rule, value, callback) => {
+			    if (value==='') {
+			        callback(new Error(this.$t("forgotPassword.font7")))
+			    } else {
+			        callback()
+			    }
+			}
+			const validatePasswordA = (rule, value, callback) => {
+			    if (value==='') {
+			        callback(new Error(this.$t("forgotPassword.font9")))
+			    }else if(value.length < 6){
+			        callback(new Error(this.$t("forgotPassword.font18")))
+			    }else {
+			        callback()
+			    }
+			}
+			const validatePasswordB = (rule, value, callback) => {
+			    if (value==='') {
+			        callback(new Error(this.$t("forgotPassword.font12")))
+			    }else if(value.length < 6){
+			        callback(new Error(this.$t("forgotPassword.font18")))
+			    } else {
+			        callback()
+			    }
+			}
+			
             return {
                 statementCbox: false,
                 statementShow: false,

@@ -295,9 +295,12 @@ export default {
 	  text-overflow: ellipsis;
 	  white-space: nowrap;
     }
+	.disposePhone{
+		border: none;
+	}
     .el-form-item__content{
       font-size: 14px;
-      border-bottom: 1px solid #DCDFE6;
+      
     }
     .disposePhone .el-form-item__content{
       border-bottom: 0;

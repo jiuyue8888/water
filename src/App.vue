@@ -88,6 +88,9 @@
 		word-break: break-word;
 		
 	}
+	span{
+		word-break: initial;
+	}
 	.hide .el-form-item__error{
 		display: none;
 	}
@@ -101,13 +104,16 @@
 		padding: 0!important;
 	}
 	.el-form-item__content{
-		width: 100%;
+		width: calc(100% - 10px);
 		display: flex;
 		align-items: center;
-		margin-left: 0!important;
+		margin-left: 10px!important;
 	}
 	.el-form-item{
 		display: flex;
 		align-items: center;
+	}
+	.el-form-item{
+		border-bottom: 1px solid #DCDFE6;
 	}
 </style>

@@ -19,12 +19,12 @@
     <div class="body">
       <!-- 标题 -->
       <div class="title" v-if="isEmail">{{$t('registerPhone.font22')}}</div>
-      <div class="title" v-else>{{$t('registerPhone.font16')}}<span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'"'}}</span><span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'"'}}</span></div>
+      <div class="title" v-else>{{$t('registerPhone.font16')}}<span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'》'}}</span><span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'》'}}</span></div>
       <!-- 填写手机 -->
       <phone-verify :statementCbox="statementCbox" ref="phoneVerify" />
       <!-- 下一步 -->
       <div class="next-step">
-         <div class="statement"><el-checkbox v-model="statementCbox">{{$t("registerEmail.font6")}}</el-checkbox><span class="text" @click="lockStatement">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'"'}}</span><br><span class="text" @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'"'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'"'}}</span></div>
+         <div class="statement"><el-checkbox v-model="statementCbox">{{$t("registerEmail.font6")}}</el-checkbox><span class="text" @click="lockStatement">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'》'}}</span><br><span class="text" @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'》'}}</span></div>
         <el-button class="deep-blue" round @click="onSubmit">{{$t('registerPhone.font21')}}</el-button>
       </div>
 

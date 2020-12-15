@@ -12,7 +12,7 @@
           <el-row>
             <el-col :span="16">
               <ul>
-                <el-row :gutter="20">
+                <el-row :gutter="0">
                   <el-col :span="12"><li><span style="color: #E3EFCB">●</span>
 				  {{ formatNumberRgx(this.chartDataText.thisWeek) }}L<p>{{$t("billsDetails.font3")}}</p></li></el-col>
                   <el-col :span="12"><li><span style="color: #9DCB44">●</span> 
@@ -201,7 +201,7 @@
             @close="noScroll('remove')"
             center>
       <!-- 填写合同信息 -->
-      <el-form  class="contractForm" ref="form" :rules="rules" :model="form" label-width="95px">
+      <el-form  class="contractForm" ref="form" :rules="rules" :model="form" label-width="110px">
         <el-form-item :label='$t("billsDetails.font36")' class="onUnderline">
           <el-input readonly class="underline" v-model="bodyNb"></el-input>
         </el-form-item>

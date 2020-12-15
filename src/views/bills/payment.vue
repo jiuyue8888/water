@@ -47,8 +47,8 @@
       <div class="clause">
         <p>{{$t("billsPayment.font10")}}</p>
         <p>
-          <span @click="eServicesClause = true">{{$t("billsPayment.font11")}}/</span>       
-          <span @click="privacyClause = true">{{$t("billsPayment.font13")}}</span>
+          <span @click="eServicesClause = true">《{{$t("billsPayment.font11")}}》</span>       
+          <span @click="privacyClause = true">《{{$t("billsPayment.font13")}}》</span>
         </p>
       </div>
       <div class="icon" @click="switchIcon">
