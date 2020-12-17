@@ -19,7 +19,9 @@
     <div class="body">
       <!-- 标题 -->
       <div class="title" v-if="isEmail">{{$t('registerPhone.font22')}}</div>
-      <div class="title" v-else>{{$t('registerPhone.font16')}}<span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'》'}}</span><span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'》'}}</span></div>
+      <div class="title" v-else>{{$t('registerPhone.font16')}}
+	  <span @click="lockStatement">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font17')}}{{$i18n.locale=='ZH'?'》':'》'}}</span>
+	  <span @click="electronicShow=true">{{$i18n.locale=='ZH'?'《':'《'}}{{$t('registerPhone.font19')}}{{$i18n.locale=='ZH'?'》':'》'}}</span></div>
       <!-- 填写手机 -->
       <phone-verify :statementCbox="statementCbox" ref="phoneVerify" />
       <!-- 下一步 -->

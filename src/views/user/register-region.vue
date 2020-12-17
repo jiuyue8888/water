@@ -84,7 +84,12 @@
         if(res.code == 200){
           let arr = [];
           res.data.forEach(item => {
-              arr.push({id:item.cd, value:item.lb})
+			  if(window.localStorage.getItem('language')=='EN'){
+			  	arr.push({id: item.cd, value: item.lbAbb})
+			  }else{
+			  	arr.push({id: item.cd, value: item.lb})
+			  }
+          
          })
         this.regionList = arr;
         }

@@ -634,7 +634,7 @@ export default {
     async externalLink(url,isToken){
       if(isToken){
         let data = {
-          lang: 'zh_TW',
+          lang: localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
           url: url
         }
         let res = await autoJump(data);

@@ -69,20 +69,20 @@
                                 <svg-icon icon-class="inform"/>
                                 <div class="name">{{$t("otherMore.font8")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/member/change-consumership',true)">
+                            <div class="li" @click="externalLink('/customer/change-consumership',true)">
                                 <svg-icon icon-class="water-quality"/>
                                 <div class="name">{{$t("otherMore.font9")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/member/termination-water-supply',true)">
+                            <div class="li" @click="externalLink('/customer/termination-water-supply',true)">
                                 <svg-icon icon-class="gas-prices"/>
                                 <div class="name">{{$t("otherMore.font10")}}</div>
                             </div>
 
-                            <div class="li" @click="externalLink('/member/guarantee-deposit-refund',true)">
+                            <div class="li" @click="externalLink('/customer/guarantee-deposit-refund',true)">
                                 <svg-icon icon-class="integral"/>
                                 <div class="name">{{$t("otherMore.font11")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/member/meter-testing',true)">
+                            <div class="li" @click="externalLink('/customer/meter-testing',true)">
                                 <svg-icon icon-class="more"/>
                                 <div class="name">{{$t("otherMore.font12")}}</div>
                             </div>
@@ -116,7 +116,7 @@
                                 <svg-icon icon-class="water-quality"/>
                                 <div class="name">{{$t("otherMore.font18")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/member/cut-off-reading',true)">
+                            <div class="li" @click="externalLink('/customer/cut-off-reading',true)">
                                 <svg-icon icon-class="gas-prices"/>
                                 <div class="name">{{$t("otherMore.font19")}}</div>
                             </div>
@@ -142,20 +142,33 @@
                                 <svg-icon icon-class="inform"/>
                                 <div class="name">{{$t("otherMore.font22")}}</div>
                             </div>
+							<!--
                             <div class="li"
                                  @click="externalLink($config.projectModel=='formal'?'https://www.macaowater.com/about-macao-water/suspension-notice':'https://wechattest.macaowatercloud.com/about-macao-water/suspension-notice',false,true,'nologin')"
-                            >
+                            >-->
+							<div class="li"
+							     @click="externalLink('/about-macao-water/suspension-notice',true,true,'nologin')"
+							>
                                 <svg-icon icon-class="water-quality"/>
                                 <div class="name">{{$t("otherMore.font23")}}</div>
                             </div>
+							<!--
                             <div class="li"
                                  @click="externalLink($config.projectModel=='formal'?'https://www.macaowater.com/customer/tariffs-charge':'https://wechattest.macaowatercloud.com/customer/tariffs-charge',false,true,'nologin')"
-                            >
+                            >-->
+							<div class="li"
+							     @click="externalLink('/customer/tariffs-charge',true,true,'nologin')"
+							>
                                 <svg-icon icon-class="gas-prices"/>
                                 <div class="name">{{$t("otherMore.font24")}}</div>
                             </div>
+							<!--
+							<div class="li"
+							     @click="exLink($config.projectModel=='formal'?'https://www.macaowater.com/about-macao-water/daily-water-quality-report':'https://wechattest.macaowatercloud.com/about-macao-water/daily-water-quality-report',false,'nologin')"
+							>
+							-->
                             <div class="li"
-                                 @click="exLink($config.projectModel=='formal'?'https://www.macaowater.com/about-macao-water/daily-water-quality-report':'https://wechattest.macaowatercloud.com/about-macao-water/daily-water-quality-report',false,'nologin')"
+                                 @click="externalLink('/about-macao-water/daily-water-quality-report',true,true,'nologin')"
                             >
                                 <svg-icon icon-class="water-quality"/>
                                 <div class="name">{{$t("otherMore.font25")}}</div>
@@ -289,7 +302,7 @@
                         return false;
                     }
                     let data = {
-                        lang: 'zh_TW',
+                        lang: window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
                         url: url
                     }
                     let res = await autoJump(data);
@@ -307,7 +320,7 @@
                 }
                 if (isToken) {
                     let data = {
-                        lang: 'zh_TW',
+                        lang: window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
                         url: url
                     }
                     let res = await autoJump(data);

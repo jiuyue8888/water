@@ -1,11 +1,11 @@
 module.exports={
     //components
     wxBill: {
-        font1: 'Modify e-bill service channel',
-        font2: 'e-bill service is activated for Policy No.',
-        font3: 'to WeChat e-bill (Yes/No)',
-        font4: 'Water Consumption Email Reminder Service is activated for Policy No.',
-        font04: '. Do you want to switch to WeChat reminder?',
+        font1: 'Modify e-Bill service channel',
+        font2: 'e-Bill service is activated for Policy No.',
+        font3: 'to WeChat e-Bill (Yes/No)',
+        font4: 'Email e-Bill Service is activated for Policy No.',
+        font04: '. Do you want to switch to WeChat e-Bill Service?',
         font5: 'You are activating for',
         font05: 'Policy No.',
         font6: 'I understand and agree to the above Terms and Conditions of the Service',
@@ -37,7 +37,7 @@ module.exports={
         font12: 'Help',
         font13: 'Close',
         font14: 'Macao Water Services',
-        font15: 'WeChat e-bill',
+        font15: 'WeChat e-Bill',
         font16: 'Bill Management',
         font17: 'SMS',//Reminder Service
         font18: 'Quick Pay',
@@ -75,55 +75,110 @@ module.exports={
     registerEmail: {
         font1: 'Email Address：',
         font2: 'Password：',
-        font3: 'Please enter a new email address',
-        font4: 'Please enter your password',
+        font3: 'Please enter your email address',
+        font4: 'Please enter the password',
         font5: 'Forgot Password?',
         font6: 'I have read and agree to the ',
         font7: 'Please enter your email address',
         font8: 'Please enter the correct email address',
-        font9: 'Password should be more than 6 digits',
-        font10: 'Please read the "Personal Data Collection Statement"',
+        font9: 'Password should more than 6 digits',
+        font10: 'Please read the items first',
         font11: 'Email Verified',
     },
     // registerPhone 和 phoneVerify
     registerPhone: {
         font1: 'Please enter your Mobile No.',
-        font2: 'Enter 4 digits of code ',
+        font2: 'Please enter a 4-digit code ',
         font3: 'Submit',
         font4: ['Please enter a ','-digit Mobile No.'],
         font5: 'Verify Code',
         font6: 'Enter the verify code',
-        font7: 'Verification code should not be less than 4 digits',
-        font8: 'Verification code should not be longer than 4 digits',
+        font7: 'Verify code should not less than 4 digits',
+        font8: 'Verify code should not longer than 4 digits',
         font9: 'Macao',
         font10: 'Hong Kong',
         font11: 'Mainland China',
-        font12: 'Verification code sent',
+        font12: 'Verify code sent',
         font13: 'after ',
         font14: 'Resend',
         font15: 'Verified',
         font16: "Macao Water complies with the legal requirements of Law No.8/2005 “Personal Data Protection Act” and your privacy is our key concern. Therefore all members' personal information will be encrypted and please read the below terms of services statement before using other services.",
         font17:'Personal Data Collection Statement',
-        font18: "Macao Water takes the protection of your personal information very seriously. We treat your personal information as confidential and will handle it in accordance with data protection legislation.  By using this application, you agree to the Terms of Services below:" +
-            "<br/>1. Right of Use" +
-            "<br/>We only collect personal data for intended business purposes and such information will not be disclosed to third parties without your express consent or statutory requirements." +
-            "<br/>2. Security" +
-            "<br/>This application uses SSL protocol to encrypt data so as to protect your personal data and avoid them from unauthorized or accidental access during network transmission." +
-            "<br/>The system will automatically log down and store the information of your browser, such as IP address, access date and time, solely for the reasons of information security and internal record." +
-            "<br/>Please note uploading the information (including personal data) via internet might encounter risk exposure to unauthorized third parties during the course of transmission. If it is of your concern, please consider alternative methods or channels (e.g. visit Macao Water Customer Services Centre located at 718, Avenida do Conselheiro Borja) for the services." +
-            "<br/>3. Access to and Correction of Personal Data" +
-            "<br/>According to Law No.5/2008 “Personal Data Protection Act”, you can access to and correct your personal data. Please contact our Customer Hotline (853) 2822 0088 or visit our Customer Services Centre for assistance." +
-            "<br/>4. Retention of Personal Data" +
-            "<br/>Macao Water will not retain the personal data longer than it is required for particular purpose for which the data is to be used, subject to legal and regulatory requirements mandating the retention of data." +
+        font18: "Macao Water is committed to observing the regulations under Law No.8/2005 ‘Personal Data Protection Act’. " +
+			"<br/>We understand your concern about the protection and security of your privacy. Therefore, it is our top priority to keep your personal data secure so that you may use this electronic service at ease. " +
+			"By using this electronic service, you acknowledge and agree to be bound by this Personal Data Collection Statement (hereinafter referred to as the ‘Statement’). Therefore, you are advised to read the Statement carefully before you proceed. " +
+			"The Statement is available in Chinese and English. Should there be any discrepancy or conflict between the two versions, the Chinese version shall prevail. " +
+            "<br/>1. Purpose of Collecting Personal Data" +
+            "<br/>We only collect personal data that is relevant to our business in order to deliver our services to you. We will not disclose your personal data to anyone unrelated to Macao Water unless we have obtained your consent or it is required by law or related regulatory requirements." +
+            "<br/>2. Protection and Security of Personal Data" +
+            "<br/>The electronic service provided by Macao Water adopts SSL protocol to encrypt data during network transmission to protect your personal data from any unauthorised or accidental access." +
+            "<br/>When you use our service, the system will automatically record and keep information from your end, such as your IP address, access date and time. The information is collected for information security and internal record purposes only." +
+            "<br/>Please note that while transmitting information via network, there are risks that the information may be seen or used by unauthorised third parties. You should be aware that the transmission of your information (including personal data) to our company may also be exposed to such risks. If you have any concern on the above-mentioned risks, we recommend you to provide your information to our company through other methods or channels (e.g. visiting the Macao Water Customer Services Centre at 718, Avenida do Conselheiro Borja)." +
+            "<br/>3. Access to and Update of Data" +
+            "<br/>According to Law No.8/2005 ‘Personal Data Protection Act’, you can access and update your personal data. Please contact our Customer Hotline at (853) 2822 0088 or visit our Customer Services Centre for details." +
+            "<br/>4. Retention Period of Personal Data" +
+            "<br/>Macao Water will retain users’ personal data, subject to laws and regulations mandating data retention, for a period no longer than that is required to fulfil the purpose for which the data is used." +
             "<br/>5. Updates" +
-            "<br/>We may update this Statement upon necessary on irregular basis, you are advised to check this Statement from time to time to keep abreast of the latest version." +
+            "<br/>We may update and revise the Statement from time to time. We encourage you to check the Statement regularly to ensure that you acknowledge the latest version." +
             "<br/>6. Contact Us" +
-            "<br/>If you have any question or comment about this Statement, please contact our Personal Data Protection Officer at privacy@macaowater.com or write to the following address:" +
-            "<br/>The Macao Water Supply Co., Ltd" +
+            "<br/>If you have any enquiries or suggestions about Macao Water’s Personal Data Collection Statement, please feel free to contact our Personal Data Protection Officer via email to privacy@macaowater.com or writing to the following address:" +
             "<br/>Personal Data Protection Officer" +
-            "<br/>No. 718, Avenida do Conselheiro Borja, Macau",
+            "<br/>The Macao Water Supply Co., Ltd." +
+            "<br/>718, Avenida do Conselheiro Borja, Macau",
         font19:'Electronic Services Disclaimer',
-        font20:'----Electronic Services Disclaimer---',
+        font20:'Terms of Service and Disclaimer\n' +
+            '<br/>1.Disclaimer of Liability\n' +
+            'By using the Services, you agree to the following Terms of Service.\n' +
+            '\n' +
+            '<br/>2.Scope of Services\n' +
+            '<br/>These Terms of Service apply to the use of the electronic services (hereinafter referred to as the “Services”) available on the Website, Mobile Application, and WeChat Official Account of The Macao Water Supply Company Limited (hereinafter referred to as "Macao Water"), constitute an Agreement between the User and Macao Water, and form the basis of a legal relationship between the User and Macao Water.\n' +
+            '\n' +
+            '<br/>“User”: An individual or entity that agrees to these Terms of Service and uses the Services.\n' +
+            '\n' +
+            '<br/>3.Service\n' +
+            '<br/>Macao Water is the provider and owner of all of the Services and the contents. Therefore, Macao Water is not liable for any loss, error in payment and misuse of the Services or other problems arising from the information. Macao Water currently provides the following electronic services to the User: billing services, online application form services, electronic payment services, member services and information exchange service.\n' +
+            '\n' +
+            '<br/>“Member Services”: Macao Water provides the User with the convenient services of water account management and online application submission (membership registration must be completed before these services are available).\n' +
+            '\n' +
+            '<br/>Declaration: The Services are provided by The Macao Water Supply Company Limited.\n' +
+            '\n' +
+            '<br/>The Macao Water Supply Company Limited is a registered company in Macao operating under Business Registration No. 215 (SO).\n' +
+            '<br/>Macao Postal Savings is the provider of credit card online payment service.\n' +
+            '<br/>Macau Pass S.A. is the provider of MPay online payment service and Alipay online payment service.\n' +
+            '<br/>Personal and Non-commercial Use Limitation: Unless otherwise specified, the Services are for the User’s personal and non-commercial use only.\n' +
+            '\n' +
+            '<br/>4.Limitation of Liability\n' +
+            '<br/>General\n' +
+            '\n' +
+            '<br/>Any claims arising out of the enforcement of this Agreement or out of breach of any of the obligations or rights of this Agreement shall be governed by the laws of the Macao Special Administrative Region. All other claims, including but not limited to claims arising out of violation of consumer protection laws, unfair competition laws and tort, shall be governed by the laws of the Macao Special Administrative Region. You agree to the exclusive jurisdiction and venue of the courts of the Macao Special Administrative Region for any disputes arising out of or in connection with the use of the Services. If you do not agree to all of the provisions of these Terms, Macao Water shall not authorize your use of the Services. No joint venture, partnership, employment, or agency relationship exists between you and Macao Water as a result of this Agreement or your use of the Services. You agree to indemnify, and hold Macao Water and its parent companies, subsidiaries, affiliates, officers and employees harmless from and against any claims, demands, or requests for compensation (including reasonable attorney fees) made by a third party arising out of or in connection with your use of and conduct on the Services. You expressly agree and permit that Macao Water may disclose your personal information or your use of the Services, including the contents, without your prior consent when Macao Water has a good faith belief that such disclosure is reasonably necessary:(1) to comply with legal requests or legal process; (2) to protect and defend the rights or property of Macao Water or its partners; (3) to enforce these Terms of Service, or (4) to protect the interests of its members or others. The performance of this Agreement by Macao Water is subject to existing laws and legal procedures. Nothing in this Agreement shall prevent Macao Water from disclosing your use of the Services or information provided for or collected by Macao Water with respect to such use where the disclosure is required pursuant to governmental, court, or judicial order. If any provision of this Agreement, including but not limited to the above Disclaimer of Liability and Limitation of Liability, is held to be invalid or unenforceable by law, such invalid or unenforceable provision shall be replaced by a provision which being valid and enforceable reflects the original intentions as closely as possible, and the remaining provisions shall not be affected thereby. Unless otherwise stated, this Agreement constitutes the entire Agreement between Macao Water and the User, and supersedes all prior or contemporaneous communications, understandings or agreements, whether electronic, oral or written, between Macao Water and the User in relation to the use of the Services. A printed version of this Agreement and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this Agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.\n' +
+            '\n' +
+            '<br/>Macao Water will not be liable for any losses, fees or charges that may be incurred as a result of failure to pay by the due date [Note 1] caused by system failure or any reason (including but not limited to delays caused by bank transfer). Macao Water has the right to recover your bills, including any fees or costs incurred as a result of outstanding bills.\n' +
+            '\n' +
+            '<br/>[Note1: Payment is only deemed to have been made when it is received in the account of The Macao Water Supply Company Limited.]\n' +
+            '\n' +
+            '<br/>If there is any discrepancy or dispute about the accuracy of the electronic payment information on this Website, the User shall call the service hotline at 2820088.\n' +
+            '\n' +
+            '<br/>These Services do not assume any liability to the User or any other person, whether the liability is based on tort, contract, statute or otherwise (including but not limited to liability arising out of negligence, breach of contract, libel and infringement of intellectual property law), and whether the liability is of the following nature:\n' +
+            '\n' +
+            '<br/>Any consequential, direct or indirect losses (including but not limited to the loss of profits or revenues); any liability suffered by the User or any other person arising out of the use of the Services or relevant information, or any liability to others that the User requires any other person to assume. This Disclaimer is governed by the laws of the Macao Special Administrative Region and shall apply to the extent permitted thereby.\n' +
+            '\n' +
+            '<br/>You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from the Website/Services. Without prior written consent of Macao Water, you may not “meta-search” the Website/Services, send, or cause to be sent, any automated queries of any sort to the Website/Services, or use the Website/Services in any commercial manner. “Automated queries” shall include but not be limited to using any software that sends queries to any sites/services to determine how a website “ranks” on any sites/services.\n' +
+            '\n' +
+            '<br/>5.Modification and Termination of the Agreement\n' +
+            '<br/>5.1 Modification of these Terms\n' +
+            '\n' +
+            '<br/>Macao Water reserves the right to modify all terms, conditions and notices, including but not limited to any charges for the use of the Services. You are responsible for regularly reviewing these Terms of Service and additional terms posted on the designated website. Your continued use of the Services constitutes your agreement to all terms, conditions, and notices in the User Agreement\n' +
+            '\n' +
+            '<br/>5.2 Unlawful and Prohibited Use\n' +
+            '\n' +
+            '<br/>As a condition of your use of the System/Services, you will not use the Services for any purpose that is unlawful or prohibited by these terms, conditions, and notices. You may not use the System/Services in any manner that could damage, disable, overburden, or impair the System/Services (or the network(s) connected to the System/Services) or interfere with any other party’s use and enjoyment of the System/Services.\n' +
+            '\n' +
+            '<br/>You may not attempt to gain unauthorized access to the System/Services, other accounts, computer systems or networks connected to the System/Services, through hacking, password mining or any other means. You may not obtain or attempt to obtain any materials or information through any means not intentionally made available through the System/Services.\n' +
+            '\n' +
+            '<br/>5.3 The Services or its partners reserve the right to cancel the presentment of electronic bills at any time.\n' +
+            '\n' +
+            '<br/>5.4 These terms are available in Chinese, English and Portuguese. If there is any inconsistency or conflict in the interpretation of the Chinese, English and Portuguese versions, the Chinese version shall prevail.\n' +
+            '\n',
         font21: 'Next',
         font22:'For the security of your account, please conduct telephone verification',
         font23:'Success',
@@ -151,13 +206,13 @@ module.exports={
         font9: 'Please select the area(s)',
         font10:'Please read the Terms of Service before using the Service',
         font11:'Success ',
-        font12:`1.The Macao Water Supply Company Limited (hereinafter referred to as ‘Macao Water’) provides ‘Notification of Planned Water Suspension’ to users via its official WeChat account. ‘Users’ refer to individuals who apply for ‘Notification of Planned Water Suspension’ service with Macao Water, regardless of whether or not they are registered customers of Macao Water.
-<br/>2.When users follow the official WeChat account and register for membership, they can choose to subscribe to the notification service via WeChat. 
-<br/>3.Users must provide Macao Water with accurate, complete, and up-to-date registration information.
-<br/>4.Macao Water promises to provide timely messages through the ‘Notification of Planned Water Suspension’ service, but does not guarantee that it can completely avoid delays caused by network transmission, computer systems, or a force majeure.
-<br/>5.Macao Water reserves the right to suspend or terminate the ‘Notification of Planned Water Suspension’ service on WeChat without prior notice.
-<br/>6.Macao Water reserves the right to change and modify the terms and conditions at any time without prior notice.
-<br/>7. The personal data collected by Macao Water through this service will be used for processing applications and future communication. Applicants can apply to access, correct or update their personal data registered with Macao Water according to law. For details, please call the customer hotline at (853) 2822 0088 or visit the Macao Water Customer Service Centre for enquiries.`,
+        font12:'1.The Macao Water Supply Company Limited (hereinafter referred to as ‘Macao Water’) provides ‘Notification of Planned Water Suspension’ to users via its official WeChat account. ‘Users’ refer to individuals who apply for ‘Notification of Planned Water Suspension’ service with Macao Water, regardless of whether or not they are registered customers of Macao Water.\n' +
+           '<br/>2.When users follow the official WeChat account and register for membership, they can choose to subscribe to the notification service via WeChat.\n' +
+           '<br/>3.Users must provide Macao Water with accurate, complete, and up-to-date registration information.\n' +
+           '<br/>4. Macao Water promises to provide timely messages through the ‘Notification of Planned Water Suspension’ service, but does not guarantee that it can completely avoid delays caused by network transmission, computer systems, or a force majeure.\n' +
+           '<br/>5.Macao Water reserves the right to suspend or terminate the ‘Notification of Planned Water Suspension’ service on WeChat without prior notice.\n' +
+           '<br/>6.Macao Water reserves the right to change and modify the terms and conditions at any time without prior notice.\n' +
+           '<br/>7.The personal data collected by Macao Water through this service will be used for processing applications and future communication. Applicants can apply to access, correct or update their personal data registered with Macao Water according to law. For details, please call the customer hotline at (853) 2822 0088 or visit the Macao Water Customer Service Centre for enquiries.',
         font13:'Please read the Terms of Service before using the service',
         font14:'Cancel',
         font15:'Activate',
@@ -166,39 +221,39 @@ module.exports={
         font18:'To Continue',
     },
     forgotPassword: {
-        font1: 'Verify Code',
+        font1: 'Get verify Code',
         font2: ['No record found for ',', please confirm the email address or go to new user registration page.'],
         font3: 'New Registration',
         font4: 'Please re-enter your email address',
-        font5: ['The verficiation code has been sent to ','. Please enter the code you have received. If you haven\'t received the code please click "Resend".'],
+        font5: ['The verify code has been sent to ','. Please enter the code you have received. If you haven\'t received the code please click "Resend".'],
         font6: 'Verify Code',
         font7: 'Enter the verify code',
         font8: ['The email ',' has been verified. Please fill in the new password and confirm the password setting.'],
         font9: 'Enter a new password',
-        font10: 'Comfirm the password',
+        font10: 'Confirm the password',
         font11: 'Enter a new password',
         font12: 'Please re-enter the new password',
         font13: ['The password for ',' has been reset, click on the "Sign-in" button to log on your account with the new password'],
         font14: 'Sign-in',
         font15: 'Incorrect password, please try again',
         font16:'Email Address：',
-        font17:'Please enter a email address',
-        font18:'Password should not be less than 6 digits',
-        font19:'Incorrect verification code, please try again',
+        font17:'Please enter your email address',
+        font18:'Password should more than 6 digits',
+        font19:'Incorrect verify code, please try again',
     },
     //bills
     bills: {
-        font1: 'Policy No.',
+        font1: 'Policy No.:',
         font2: 'Registered Customer',
         font3: 'Non-registered Customer',
         font4: 'Amount Due',
         font5: 'Bill Paid',
         font6: 'Details',
-        font7: 'WeChat e-bill Service ',
+        font7: 'WeChat e-Bill Service',
         font8: 'No Bill',
-        font9: 'Bill Delete',
+        font9: 'Delete Policy No.',
         font10: 'Add Bill',
-        font11: 'Policy No.',
+        font11: 'Policy No.:',
         font12: 'Enter the Policy No.',
         font13: 'Bill Name:',
         font14: 'Less than 20 digits',
@@ -250,7 +305,7 @@ module.exports={
         font22: 'Paid',
         font23: 'Unpaid',
         font24: 'Bill Services',
-        font25: 'WeChat e-bill Service ',
+        font25: 'WeChat e-Bill Service ',
         font26: 'New',
         font27: 'Change Bill Name',
         font28: 'SMS Reminder Service',
@@ -271,7 +326,7 @@ module.exports={
         font43: 'Water Consumption',
         font44: 'Up from last week',
         font45: 'Down from last week',
-        font46: 'WeChat e-bill Service ',
+        font46: 'WeChat e-Bill Service ',
         font47: 'Modify Water Consumption Reminder Service channel',
         font48: 'Terms and Conditions<br/>' +
             '1. The e-Bill Service applicant (hereinafter referred to as ‘User’) must be a registered customer of The Macao Water Supply Company Limited (hereinafter referred to as ‘Macao Water’).\n' +
@@ -336,49 +391,49 @@ module.exports={
             'By using the Services, you agree to the following Terms of Service.\n' +
             '\n' +
             '<br/>2.Scope of Services\n' +
-            'These Terms of Service apply to the use of the electronic services (hereinafter referred to as the “Services”) available on the Website, Mobile Application, and WeChat Official Account of The Macao Water Supply Company Limited (hereinafter referred to as "Macao Water"), constitute an Agreement between the User and Macao Water, and form the basis of a legal relationship between the User and Macao Water.\n' +
+            '<br/>These Terms of Service apply to the use of the electronic services (hereinafter referred to as the “Services”) available on the Website, Mobile Application, and WeChat Official Account of The Macao Water Supply Company Limited (hereinafter referred to as "Macao Water"), constitute an Agreement between the User and Macao Water, and form the basis of a legal relationship between the User and Macao Water.\n' +
             '\n' +
-            '“User”: An individual or entity that agrees to these Terms of Service and uses the Services.\n' +
+            '<br/>“User”: An individual or entity that agrees to these Terms of Service and uses the Services.\n' +
             '\n' +
             '<br/>3.Service\n' +
-            'Macao Water is the provider and owner of all of the Services and the contents. Therefore, Macao Water is not liable for any loss, error in payment and misuse of the Services or other problems arising from the information. Macao Water currently provides the following electronic services to the User: billing services, online application form services, electronic payment services, member services and information exchange service.\n' +
+            '<br/>Macao Water is the provider and owner of all of the Services and the contents. Therefore, Macao Water is not liable for any loss, error in payment and misuse of the Services or other problems arising from the information. Macao Water currently provides the following electronic services to the User: billing services, online application form services, electronic payment services, member services and information exchange service.\n' +
             '\n' +
-            '“Member Services”: Macao Water provides the User with the convenient services of water account management and online application submission (membership registration must be completed before these services are available).\n' +
+            '<br/>“Member Services”: Macao Water provides the User with the convenient services of water account management and online application submission (membership registration must be completed before these services are available).\n' +
             '\n' +
-            'Declaration: The Services are provided by The Macao Water Supply Company Limited.\n' +
+            '<br/>Declaration: The Services are provided by The Macao Water Supply Company Limited.\n' +
             '\n' +
-            'The Macao Water Supply Company Limited is a registered company in Macao operating under Business Registration No. 215 (SO).\n' +
-            'Macao Postal Savings is the provider of credit card online payment service.\n' +
-            'Macau Pass S.A. is the provider of MPay online payment service and Alipay online payment service.\n' +
-            'Personal and Non-commercial Use Limitation: Unless otherwise specified, the Services are for the User’s personal and non-commercial use only.\n' +
+            '<br/>The Macao Water Supply Company Limited is a registered company in Macao operating under Business Registration No. 215 (SO).\n' +
+            '<br/>Macao Postal Savings is the provider of credit card online payment service.\n' +
+            '<br/>Macau Pass S.A. is the provider of MPay online payment service and Alipay online payment service.\n' +
+            '<br/>Personal and Non-commercial Use Limitation: Unless otherwise specified, the Services are for the User’s personal and non-commercial use only.\n' +
             '\n' +
             '<br/>4.Limitation of Liability\n' +
-            'General\n' +
+            '<br/>General\n' +
             '\n' +
-            'Any claims arising out of the enforcement of this Agreement or out of breach of any of the obligations or rights of this Agreement shall be governed by the laws of the Macao Special Administrative Region. All other claims, including but not limited to claims arising out of violation of consumer protection laws, unfair competition laws and tort, shall be governed by the laws of the Macao Special Administrative Region. You agree to the exclusive jurisdiction and venue of the courts of the Macao Special Administrative Region for any disputes arising out of or in connection with the use of the Services. If you do not agree to all of the provisions of these Terms, Macao Water shall not authorize your use of the Services. No joint venture, partnership, employment, or agency relationship exists between you and Macao Water as a result of this Agreement or your use of the Services. You agree to indemnify, and hold Macao Water and its parent companies, subsidiaries, affiliates, officers and employees harmless from and against any claims, demands, or requests for compensation (including reasonable attorney fees) made by a third party arising out of or in connection with your use of and conduct on the Services. You expressly agree and permit that Macao Water may disclose your personal information or your use of the Services, including the contents, without your prior consent when Macao Water has a good faith belief that such disclosure is reasonably necessary: (1) to comply with legal requests or legal process; (2) to protect and defend the rights or property of Macao Water or its partners; (3) to enforce these Terms of Service, or (4) to protect the interests of its members or others. The performance of this Agreement by Macao Water is subject to existing laws and legal procedures. Nothing in this Agreement shall prevent Macao Water from disclosing your use of the Services or information provided for or collected by Macao Water with respect to such use where the disclosure is required pursuant to governmental, court, or judicial order. If any provision of this Agreement, including but not limited to the above Disclaimer of Liability and Limitation of Liability, is held to be invalid or unenforceable by law, such invalid or unenforceable provision shall be replaced by a provision which being valid and enforceable reflects the original intentions as closely as possible, and the remaining provisions shall not be affected thereby. Unless otherwise stated, this Agreement constitutes the entire Agreement between Macao Water and the User, and supersedes all prior or contemporaneous communications, understandings or agreements, whether electronic, oral or written, between Macao Water and the User in relation to the use of the Services. A printed version of this Agreement and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this Agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.\n' +
+            '<br/>Any claims arising out of the enforcement of this Agreement or out of breach of any of the obligations or rights of this Agreement shall be governed by the laws of the Macao Special Administrative Region. All other claims, including but not limited to claims arising out of violation of consumer protection laws, unfair competition laws and tort, shall be governed by the laws of the Macao Special Administrative Region. You agree to the exclusive jurisdiction and venue of the courts of the Macao Special Administrative Region for any disputes arising out of or in connection with the use of the Services. If you do not agree to all of the provisions of these Terms, Macao Water shall not authorize your use of the Services. No joint venture, partnership, employment, or agency relationship exists between you and Macao Water as a result of this Agreement or your use of the Services. You agree to indemnify, and hold Macao Water and its parent companies, subsidiaries, affiliates, officers and employees harmless from and against any claims, demands, or requests for compensation (including reasonable attorney fees) made by a third party arising out of or in connection with your use of and conduct on the Services. You expressly agree and permit that Macao Water may disclose your personal information or your use of the Services, including the contents, without your prior consent when Macao Water has a good faith belief that such disclosure is reasonably necessary:(1) to comply with legal requests or legal process; (2) to protect and defend the rights or property of Macao Water or its partners; (3) to enforce these Terms of Service, or (4) to protect the interests of its members or others. The performance of this Agreement by Macao Water is subject to existing laws and legal procedures. Nothing in this Agreement shall prevent Macao Water from disclosing your use of the Services or information provided for or collected by Macao Water with respect to such use where the disclosure is required pursuant to governmental, court, or judicial order. If any provision of this Agreement, including but not limited to the above Disclaimer of Liability and Limitation of Liability, is held to be invalid or unenforceable by law, such invalid or unenforceable provision shall be replaced by a provision which being valid and enforceable reflects the original intentions as closely as possible, and the remaining provisions shall not be affected thereby. Unless otherwise stated, this Agreement constitutes the entire Agreement between Macao Water and the User, and supersedes all prior or contemporaneous communications, understandings or agreements, whether electronic, oral or written, between Macao Water and the User in relation to the use of the Services. A printed version of this Agreement and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this Agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.\n' +
             '\n' +
-            'Macao Water will not be liable for any losses, fees or charges that may be incurred as a result of failure to pay by the due date [Note 1] caused by system failure or any reason (including but not limited to delays caused by bank transfer). Macao Water has the right to recover your bills, including any fees or costs incurred as a result of outstanding bills.\n' +
+            '<br/>Macao Water will not be liable for any losses, fees or charges that may be incurred as a result of failure to pay by the due date [Note 1] caused by system failure or any reason (including but not limited to delays caused by bank transfer). Macao Water has the right to recover your bills, including any fees or costs incurred as a result of outstanding bills.\n' +
             '\n' +
-            '[Note1: Payment is only deemed to have been made when it is received in the account of The Macao Water Supply Company Limited.]\n' +
+            '<br/>[Note1: Payment is only deemed to have been made when it is received in the account of The Macao Water Supply Company Limited.]\n' +
             '\n' +
-            'If there is any discrepancy or dispute about the accuracy of the electronic payment information on this Website, the User shall call the service hotline at 2820088.\n' +
+            '<br/>If there is any discrepancy or dispute about the accuracy of the electronic payment information on this Website, the User shall call the service hotline at 2820088.\n' +
             '\n' +
-            'These Services do not assume any liability to the User or any other person, whether the liability is based on tort, contract, statute or otherwise (including but not limited to liability arising out of negligence, breach of contract, libel and infringement of intellectual property law), and whether the liability is of the following nature:\n' +
+            '<br/>These Services do not assume any liability to the User or any other person, whether the liability is based on tort, contract, statute or otherwise (including but not limited to liability arising out of negligence, breach of contract, libel and infringement of intellectual property law), and whether the liability is of the following nature:\n' +
             '\n' +
-            'Any consequential, direct or indirect losses (including but not limited to the loss of profits or revenues); any liability suffered by the User or any other person arising out of the use of the Services or relevant information, or any liability to others that the User requires any other person to assume. This Disclaimer is governed by the laws of the Macao Special Administrative Region and shall apply to the extent permitted thereby.\n' +
+            '<br/>Any consequential, direct or indirect losses (including but not limited to the loss of profits or revenues); any liability suffered by the User or any other person arising out of the use of the Services or relevant information, or any liability to others that the User requires any other person to assume. This Disclaimer is governed by the laws of the Macao Special Administrative Region and shall apply to the extent permitted thereby.\n' +
             '\n' +
-            'You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from the Website/Services. Without prior written consent of Macao Water, you may not “meta-search” the Website/Services, send, or cause to be sent, any automated queries of any sort to the Website/Services, or use the Website/Services in any commercial manner. “Automated queries” shall include but not be limited to using any software that sends queries to any sites/services to determine how a website “ranks” on any sites/services.\n' +
+            '<br/>You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from the Website/Services. Without prior written consent of Macao Water, you may not “meta-search” the Website/Services, send, or cause to be sent, any automated queries of any sort to the Website/Services, or use the Website/Services in any commercial manner. “Automated queries” shall include but not be limited to using any software that sends queries to any sites/services to determine how a website “ranks” on any sites/services.\n' +
             '\n' +
             '<br/>5.Modification and Termination of the Agreement\n' +
             '<br/>5.1 Modification of these Terms\n' +
             '\n' +
-            'Macao Water reserves the right to modify all terms, conditions and notices, including but not limited to any charges for the use of the Services. You are responsible for regularly reviewing these Terms of Service and additional terms posted on the designated website. Your continued use of the Services constitutes your agreement to all terms, conditions, and notices in the User Agreement\n' +
+            '<br/>Macao Water reserves the right to modify all terms, conditions and notices, including but not limited to any charges for the use of the Services. You are responsible for regularly reviewing these Terms of Service and additional terms posted on the designated website. Your continued use of the Services constitutes your agreement to all terms, conditions, and notices in the User Agreement\n' +
             '\n' +
             '<br/>5.2 Unlawful and Prohibited Use\n' +
             '\n' +
-            'As a condition of your use of the System/Services, you will not use the Services for any purpose that is unlawful or prohibited by these terms, conditions, and notices. You may not use the System/Services in any manner that could damage, disable, overburden, or impair the System/Services (or the network(s) connected to the System/Services) or interfere with any other party’s use and enjoyment of the System/Services.\n' +
+            '<br/>As a condition of your use of the System/Services, you will not use the Services for any purpose that is unlawful or prohibited by these terms, conditions, and notices. You may not use the System/Services in any manner that could damage, disable, overburden, or impair the System/Services (or the network(s) connected to the System/Services) or interfere with any other party’s use and enjoyment of the System/Services.\n' +
             '\n' +
-            'You may not attempt to gain unauthorized access to the System/Services, other accounts, computer systems or networks connected to the System/Services, through hacking, password mining or any other means. You may not obtain or attempt to obtain any materials or information through any means not intentionally made available through the System/Services.\n' +
+            '<br/>You may not attempt to gain unauthorized access to the System/Services, other accounts, computer systems or networks connected to the System/Services, through hacking, password mining or any other means. You may not obtain or attempt to obtain any materials or information through any means not intentionally made available through the System/Services.\n' +
             '\n' +
             '<br/>5.3 The Services or its partners reserve the right to cancel the presentment of electronic bills at any time.\n' +
             '\n' +
@@ -401,7 +456,7 @@ module.exports={
             '<br/>Contact Information\n' +
             '<br/>Address: 718, Avenida do Conselheiro Borja, Macao\n' +
             '<br/>Telephone No.: (853) 2822 0088',
-        font21: 'Privacy Policy',
+        font21: 'Personal Data Collection Statement',
         font22: '(Refer to the above)',
         font23: 'Please read these Terms of Services carefully before using the Services.',
         font24: 'Please select the payment method',
@@ -483,8 +538,8 @@ module.exports={
         font8: 'Cancel',
     },
     memberGiftRecord: {
-        font1: 'Points Redemption',
-        font2: 'Points Balance',
+        font1: 'Points',
+        font2: 'Points Details',
         font3: 'points',
     },
     memberGiftMyGift: {
@@ -520,7 +575,7 @@ module.exports={
         font30: 'No data',
         font31: 'Redemption succeeded',
         font32: 'Code error, redemption failed',
-        font33: 'Comfirm',
+        font33: 'Confirm',
         font34: 'Please present this the QR code for redemption and check the the Notes to learn the rules and details.',
         font35: 'Cancel',
         font36: 'Notes',
@@ -533,7 +588,7 @@ module.exports={
     },
     otherMore: {
         font1: 'Bill Services',
-        font2: 'WeChat e-bill Service ',
+        font2: 'WeChat e-Bill Service ',
         font3: 'SMS Reminder Service ',
         font4: 'Change of Mailing Address',
         font5: 'Change of Bill Language',
@@ -546,7 +601,7 @@ module.exports={
         font12: 'Meter Testing',
         font13: 'Online Application Enquiry',
         font14: 'New Water Supply Enquiry',
-        font15: 'Water Suspension Notice Subscription',
+        font15: 'Planned Water Suspension Notice',
         font16: 'Meter Services',
         font17: 'Submit Self-Reading',
         font18: 'Meter Reading Appointment',
@@ -584,7 +639,7 @@ module.exports={
 		font10:'Smart Meter Reminder Service is activated',
 		font12:'In case of water supply emergency, registered members can receive the water suspension notice in time. Thus, please select the area(s) you wish to subscribe the water suspension notice (multiple selection)',
 		font13:'Without selecting areas, you will not be able to receive the water suspension notification for certain area(s), but we will still send you a notice when a city-level emergency happens.',
-		font14:'Comfirm',
+		font14:'Confirm',
 		font15:'Edit',
 		font16:'Service confirmation',
 	},

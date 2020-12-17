@@ -41,3 +41,10 @@ export function getLangState() {
     method: 'get'
   })
 }
+
+export function signInh() {
+  return request({
+    url: 'signIn',
+    method: 'get'    
+  })
+}

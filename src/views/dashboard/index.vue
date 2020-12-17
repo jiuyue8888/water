@@ -66,14 +66,15 @@
             <svg-icon icon-class="management-bills"/><br/>{{$t("dashboard.font16")}}
           </el-badge>
         </p>
+		
         <p @click="externalLink('/member/bill-management',true)"><svg-icon icon-class="sms"/><br/>{{$t("dashboard.font17")}}</p>
         <p @click="routerHerf('/other/quick-payment','','nologin')"><svg-icon icon-class="shortcut"/><br/>{{$t("dashboard.font18")}}</p>
-        <p @click="exLink('https://www.macaowater.com/about-macao-water/suspension-notice',false,'nologin')">
+        <p @click="externalLink('/about-macao-water/suspension-notice',true,false,'nologin')">
 			<svg-icon icon-class="inform" /><br/>{{$t("dashboard.font19")}}</p>
-        <p @click="exLink('https://www.macaowater.com/about-macao-water/daily-water-quality-report',false,'nologin')">
+        <p @click="externalLink('/about-macao-water/daily-water-quality-report',true,false,'nologin')">
 			<svg-icon icon-class="water-quality"/><br/>{{$t("dashboard.font20")}}</p>
 
-        <p @click="exLink('https://www.macaowater.com/customer/tariffs-charge',false,'nologin')">
+        <p @click="externalLink('/customer/tariffs-charge',true,false,'nologin')">
 			<svg-icon icon-class="gas-prices"/><br/>{{$t("dashboard.font21")}}</p>
 
         <p @click="routerHerf('/other/more?login='+userLoginAuto,'','nologin')"><svg-icon icon-class="more"/><br/>{{$t("dashboard.font22")}}</p>
@@ -187,7 +188,7 @@
 import { getWxInfo, publicNumInfo, getAccessToken, signIn, wxSubscribe } from '@/api/user'
 import { getBillList, getRemind } from '@/api/bill'
 import { checkIn } from '@/api/integral'
-import { autoJump, waterQuality,getBannerList } from '@/api/others'
+import { autoJump, waterQuality,getBannerList,signInh } from '@/api/others'
 import { getToken } from '@/utils/auth'
 import { parseTime } from '@/utils'
 import Cookies from 'js-cookie'
@@ -201,6 +202,7 @@ export default {
   },
   data(){
     return {
+		lan:window.localStorage.getItem('language'),
       contractNb:Number(sessionStorage.contractNb),
       badgeShow:sessionStorage.badgeShow == 'false' ? false : true,
       giftNum:0,
@@ -293,6 +295,7 @@ export default {
   async created(){
     this.openFullScreen();
     this.openId = getToken();
+	//signInh();
     // let pass='DgSKK'
     // console.log(pass.toLowerCase());
     // console.log(md5(pass));
@@ -421,7 +424,7 @@ export default {
       }
       if(isToken){
         let data = {
-          lang: 'zh_TW',
+          lang: window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
           url: url
         }
         let res = await autoJump(data);
