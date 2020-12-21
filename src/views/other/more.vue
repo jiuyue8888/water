@@ -18,6 +18,7 @@
                 <ul>
                     <li v-for="(item,index) in navList"
                         :class="{'active':navIndex==index}"
+						:style="lan=='EN'&&index==0?'width:90px':''"
                         @click="navClick(index)"
                     >{{item}}</li>
                 </ul>
@@ -212,12 +213,14 @@
         name: 'more',
         data() {
             return {
+				lan:window.localStorage.getItem('language'),
                 anchorLocation: {
                     billingService: '',
                     serviceApplication: '',
                     waterService: '',
                     disclose: '',
                     more: '',
+					
                 },
                 bindShow: false,
                 userLoginAuto: false,
@@ -381,9 +384,7 @@
 			box-sizing: border-box;
 			margin-right: 0px;
 		}
-		li:nth-child(1){
-			width: 90px;
-		}
+		
         li.active {
 			
             color: #364973;
