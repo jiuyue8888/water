@@ -71,8 +71,8 @@
           <div class="title">{{$t("billsDetails.font13")}}</div>
           <div class="average">{{$t("billsDetails.font14")}}：{{ formatNumberRgx(average) }}L</div>
           <div class="charts">
-            <ve-histogram :data="histogramData" :legend-visible="false" :extend="chartExtend" height="220px" width="100vw" 
-			style="top:-50px;left: -50px"></ve-histogram>
+            <ve-histogram :data="histogramData" :legend-visible="false" :extend="chartExtend" height="220px" width="100%" 
+			style="top:-50px;left: 0px"></ve-histogram>
 			
           </div>
           <div class="rule-tip">*{{$t("billsDetails.font15")}}</div>

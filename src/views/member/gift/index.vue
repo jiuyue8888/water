@@ -61,7 +61,7 @@
       </el-card>
       <span slot="footer" class="dialog-footer">
         <el-button round @click="exchangeShow = false">{{$t('memberGift.font8')}}</el-button>
-        <el-button round type="primary" @click="exchangeConfirm">{{$t('memberGift.font5')}}</el-button>
+        <el-button round type="primary" @click="exchangeConfirm">{{lan=='EN'?'Redeem':$t('memberGift.font5')}}</el-button>
       </span>
     </el-dialog>
 
@@ -76,6 +76,7 @@ export default {
   name: 'memberGift',
   data(){
     return {
+		lan:window.localStorage.getItem('language'),
       exchangeShow: false,
       integralNum: 0,
       giftNum: 0,

@@ -97,7 +97,8 @@
 <!--          <div class="body" @click="!messageShow && externalLink('https://m.macaowater.com/about-macao-water/daily-water-quality-report',false)">-->
           <div class="body" @click="exLink('https://www.macaowater.com/about-macao-water/daily-water-quality-report',false,'nologin')">
             <h3 class="text">{{ item.location }}</h3>
-            <svg-icon class="quality" style="font-size: 65px" icon-class="quality"/>
+			<span v-if="lan=='EN'" class="newImg"><img src="https://cmsphoto.wechattips.com/macaowater/en/High%20quality%402x.png"/></span>
+            <svg-icon v-else class="quality" style="font-size: 65px" icon-class="quality"/>
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -1033,6 +1034,17 @@ export default {
     color: #314779;
     font-size: 14px;
   }
+}
+.newImg{
+	width: 75px;
+	height: 60px;
+	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-top: 20px;
+	img{
+		width: 75px;
+	}
 }
 /*广告图*/
 .swiperbanner{

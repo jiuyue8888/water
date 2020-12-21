@@ -1,6 +1,6 @@
 <template>
   <div class="main" @click="quickHistoryShow = false">
-    <img src="@/assets/images/quick-payment.png">
+    <img src="https://cmsphoto.wechattips.com/macaowater/en/logo%402x.png">
     <div>
       <div @click.stop="payment('focus')" class="quickPayment-icon">
         <el-input :placeholder='$t("otherQuickPayment.font1")' v-model="bodyNb" class="input-with-select" @blur="onBlur"  @keyup.enter.native="payment('enter')">

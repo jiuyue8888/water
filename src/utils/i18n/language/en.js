@@ -4,7 +4,7 @@ module.exports={
         font1: 'Modify e-Bill service channel',
         font2: 'e-Bill service is activated for Policy No.',
         font3: 'to WeChat e-Bill (Yes/No)',
-        font4: 'Email e-Bill Service is activated for Policy No.',
+        font4: 'Email e-Bill Service is activated for ',
         font04: '. Do you want to switch to WeChat e-Bill Service?',
         font5: 'You are activating for',
         font05: 'Policy No.',
@@ -13,7 +13,7 @@ module.exports={
         font07: 'Activate',
         font8: 'Terminate',
         font9: 'You are canceling all the ',
-        font09: 'for Policy No.',
+        font09: 'Policy No.',
         font10: 'Confirm',
         font11: 'To Continue',
         font12: 'Please read the Terms of Service before using the Service',
@@ -39,7 +39,7 @@ module.exports={
         font14: 'Macao Water Services',
         font15: 'WeChat e-Bill',
         font16: 'Bill Management',
-        font17: 'SMS',//Reminder Service
+        font17: 'SMS Reminder Service',
         font18: 'Quick Pay',
         font19: 'Water Suspension Notice',
         font20: 'Daily Water Quality',
@@ -51,7 +51,7 @@ module.exports={
         font26: 'Profile',
         font27: 'Water Quality Today',
         font28: 'High quality / Up to standards / Under close monitoring / Unsafe to drink',//多个
-        font29: ['Scan the QR code','Subscribe to official Macao Water WeChat account，','to receive Emergency Temporary Water Suspension Notices，','and more WeChat Services.'],
+        font29: ['Scan the QR code','subscribe to MacaoWater WeChat official account，','to receive Emergency Temporary Water Suspension Notices，','and more WeChat Services.'],
         // font29: 'Scan the QR code',
         // font30: 'Subscribe to official Macao Water WeChat account，',
         // font31: 'to receive Emergency Temporary Water Suspension Notices，',
@@ -128,7 +128,7 @@ module.exports={
         font19:'Electronic Services Disclaimer',
         font20:'Terms of Service and Disclaimer\n' +
             '<br/>1.Disclaimer of Liability\n' +
-            'By using the Services, you agree to the following Terms of Service.\n' +
+            '<br/>By using the Services, you agree to the following Terms of Service.\n' +
             '\n' +
             '<br/>2.Scope of Services\n' +
             '<br/>These Terms of Service apply to the use of the electronic services (hereinafter referred to as the “Services”) available on the Website, Mobile Application, and WeChat Official Account of The Macao Water Supply Company Limited (hereinafter referred to as "Macao Water"), constitute an Agreement between the User and Macao Water, and form the basis of a legal relationship between the User and Macao Water.\n' +
@@ -243,7 +243,7 @@ module.exports={
     },
     //bills
     bills: {
-        font1: 'Policy No.:',
+        font1: 'Policy No.',
         font2: 'Registered Customer',
         font3: 'Non-registered Customer',
         font4: 'Amount Due',
@@ -253,7 +253,7 @@ module.exports={
         font8: 'No Bill',
         font9: 'Delete Policy No.',
         font10: 'Add Bill',
-        font11: 'Policy No.:',
+        font11: 'Policy No.',
         font12: 'Enter the Policy No.',
         font13: 'Bill Name:',
         font14: 'Less than 20 digits',
@@ -532,7 +532,7 @@ module.exports={
         font2: 'Gifts',
         font3: 'Records',
         font4: 'Points Rewards',
-        font5: 'Gifts Redemption',
+        font5: 'Points',
         font6: 'Confirm Redemption',
         font7: 'Redemption Succeeded',
         font8: 'Cancel',
@@ -576,7 +576,7 @@ module.exports={
         font31: 'Redemption succeeded',
         font32: 'Code error, redemption failed',
         font33: 'Confirm',
-        font34: 'Please present this the QR code for redemption and check the the Notes to learn the rules and details.',
+        font34: 'Please present the QR code for redemption and check the Notes to learn the rules and details.',
         font35: 'Cancel',
         font36: 'Notes',
         font37: 'Learn More',

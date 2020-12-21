@@ -6,7 +6,7 @@
 		 custom-class="dialog-common" :visible.sync="WeChatBillShow" :show-close="false" @open="noScroll('add')" @close="closeWeChatBillShow"
 		 center>
 			<div class="title" v-if="dialogContent.type === 3 || dialogContent.type === 4">
-				<p>{{$t('wxBill.font4')}}{{ contractNo }}{{$t('wxBill.font04')}}?</p>
+				<p>{{$t('wxBill.font4')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
 			</div>
 			<div class="title" v-else-if="dialogContent.type === 2 && dialogContent.cdType === '1' && dialogContent.cdStatus === '1'">
 				<p>{{$t('wxBill.font4')}}{{ contractNo }}{{$t('wxBill.font04')}}?</p>
@@ -75,7 +75,7 @@
 		methods: {
 			label(a,b){
 			  if(window.localStorage.getItem('language')=='EN'){
-			    return this.$t('wxBill.font9')+'<br><b style="color:#EE5050">'+b+'<br>'+this.$t('wxBill.font09')+'</b>'+a;
+			    return this.$t('wxBill.font9')+'<br>'+b+' for<br><b style="color:#EE5050">'+this.$t('wxBill.font09')+a+'</b>';
 			  }else{
 			    return this.$t('wxBill.font9')+'<b style="color:#EE5050">'+a+' <br>'+this.$t('wxBill.font09')+'</b>'+b;
 			  }

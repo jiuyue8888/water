@@ -279,12 +279,12 @@
                         that.form.memberNb=phoneRes.data.memberNb
                         let code = that.code;
                         code.disabled = true;
-                        code.text =this.$i18n.locale=='ZH'?code.time + this.$t("registerPhone.font13"): this.$t("registerPhone.font13")+code.time+'s';
+                        code.text =window.localStorage.getItem('language')=='ZH'?code.time + that.$t("registerPhone.font13"): that.$t("registerPhone.font13")+code.time+'s';
                         let interval = setInterval(function() {
                             --code.time;
-                            code.text =this.$i18n.locale=='ZH'?code.time + this.$t("registerPhone.font13"): this.$t("registerPhone.font13")+code.time+'s';
+                            code.text =window.localStorage.getItem('language')=='ZH'?code.time + that.$t("registerPhone.font13"): that.$t("registerPhone.font13")+code.time+'s';
                             if(code.time < 1) {
-                                code.text = this.$t("registerPhone.font14");
+                                code.text = that.$t("registerPhone.font14");
                                 code.time = 60;
                                 code.disabled = false;
                                 clearInterval(interval);

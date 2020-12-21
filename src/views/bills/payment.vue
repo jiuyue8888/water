@@ -53,7 +53,8 @@
       </div>
       <div class="icon" @click="switchIcon">
         <svg-icon :class="{gray:!orderInfo.payFlag}" icon-class="may" data-id="20" />
-        <svg-icon :class="{gray:!orderInfo.showPaymentQrcode}" icon-class="qrcode" data-id="1" />
+		<img src="https://cmsphoto.wechattips.com/macaowater/en/pay%20code%402x.png" class="newIcon">
+        <!--<svg-icon :class="{gray:!orderInfo.showPaymentQrcode}" icon-class="qrcode" data-id="1" />-->
         <svg-icon :class="{gray:!orderInfo.payFlag}" icon-class="visa" data-id="8" />
         <svg-icon :class="{gray:!orderInfo.payFlag}" icon-class="alipay" data-id="21" />
       </div>
@@ -301,6 +302,14 @@ export default {
   // 打开缴费码弹层
   .openQrCodeShow .el-dialog{
     border-radius: 10px;
+  }
+  .newIcon{
+	  display: block;
+	  width: 60px;
+	  height: 60px;
+	      border: 2px solid rgb(172, 192, 215);
+	      border-radius: 8px;
+	      
   }
   //是否同意
   .cbox{
