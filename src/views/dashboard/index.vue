@@ -69,12 +69,12 @@
 		
         <p @click="externalLink('/member/bill-management',true)"><svg-icon icon-class="sms"/><br/>{{$t("dashboard.font17")}}</p>
         <p @click="routerHerf('/other/quick-payment','','nologin')"><svg-icon icon-class="shortcut"/><br/>{{$t("dashboard.font18")}}</p>
-        <p @click="externalLink('/about-macao-water/suspension-notice',true,false,'nologin')">
+        <p @click="externalLink('/about-macao-water/suspension-notice',true,true,'nologin')">
 			<svg-icon icon-class="inform" /><br/>{{$t("dashboard.font19")}}</p>
-        <p @click="externalLink('/about-macao-water/daily-water-quality-report',true,false,'nologin')">
+        <p @click="externalLink('/about-macao-water/daily-water-quality-report',true,true,'nologin')">
 			<svg-icon icon-class="water-quality"/><br/>{{$t("dashboard.font20")}}</p>
 
-        <p @click="externalLink('/customer/tariffs-charge',true,false,'nologin')">
+        <p @click="externalLink('/customer/tariffs-charge',true,true,'nologin')">
 			<svg-icon icon-class="gas-prices"/><br/>{{$t("dashboard.font21")}}</p>
 
         <p @click="routerHerf('/other/more?login='+userLoginAuto,'','nologin')"><svg-icon icon-class="more"/><br/>{{$t("dashboard.font22")}}</p>

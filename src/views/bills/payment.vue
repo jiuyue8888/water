@@ -53,8 +53,9 @@
       </div>
       <div class="icon" @click="switchIcon">
         <svg-icon :class="{gray:!orderInfo.payFlag}" icon-class="may" data-id="20" />
-		<img src="https://cmsphoto.wechattips.com/macaowater/en/pay%20code%402x.png" class="newIcon">
-        <!--<svg-icon :class="{gray:!orderInfo.showPaymentQrcode}" icon-class="qrcode" data-id="1" />-->
+		<span><img :class="!orderInfo.showPaymentQrcode?'newIcon gray':'newIcon'" data-id="1" src="https://cmsphoto.wechattips.com/macaowater/en/pay%20code%402x.png">
+        </span>
+		<!--<svg-icon :class="{gray:!orderInfo.showPaymentQrcode}" icon-class="qrcode" data-id="1" />-->
         <svg-icon :class="{gray:!orderInfo.payFlag}" icon-class="visa" data-id="8" />
         <svg-icon :class="{gray:!orderInfo.payFlag}" icon-class="alipay" data-id="21" />
       </div>
@@ -256,16 +257,30 @@ export default {
     //切換支付方式
     async switchIcon(e){
       let that = e.target;
-      let allChild = that.parentNode.parentNode.children;
-      if(that.nodeName.toLowerCase() == 'use'){
+	  let allChild=that.parentNode.parentNode.children
+      document.getElementsByClassName('newIcon')[0].classList.remove('select');
+      
+	  
+      //if(that.nodeName.toLowerCase() == 'use'){
+		  
         for(let i=0;i<allChild.length;i++){
+			
           allChild[i].classList.remove('select');
         }
-        if(that.parentNode.className.animVal.includes('gray')){
+        if(that.parentNode.className.animVal&&that.parentNode.className.animVal.includes('gray')){
           return false;
         }else{
-          that.parentNode.classList.add('select');
-          this.orderInfo.paymentMethod = that.parentNode.dataset.id;
+			
+			if(that.className=='newIcon'){
+				that.classList.add('select');
+				this.orderInfo.paymentMethod = that.dataset.id;
+				
+			}else{
+				that.parentNode.classList.add('select');
+				this.orderInfo.paymentMethod = that.parentNode.dataset.id;
+			}
+          console.log(this.orderInfo)
+          
 
           //直接显示缴费码
           if(that.parentNode.dataset.id==1){
@@ -276,7 +291,7 @@ export default {
             this.openQrCodeImg = img;
           }
 
-        }
+        //}
       }
     },
   }
