@@ -5,7 +5,7 @@ module.exports={
         font2: 'e-Bill service is activated for Policy No.',
         font3: 'to WeChat e-Bill (Yes/No)',
         font4: 'Email e-Bill Service is activated for Policy No.',
-        font04: '. Do you want to switch to WeChat e-Bill Service?',
+        font04: '. Do you want to switch to WeChat e-Bill Service',
         font5: 'You are activating for',
         font05: 'Policy No.',
         font6: 'I understand and agree to the above Terms and Conditions of the Service',
@@ -13,7 +13,7 @@ module.exports={
         font07: 'Activate',
         font8: 'Terminate',
         font9: 'You are canceling all the ',
-        font09: 'for Policy No.',
+        font09: 'Policy No.',
         font10: 'Confirm',
         font11: 'To Continue',
         font12: 'Please read the Terms of Service before using the Service',
@@ -39,7 +39,7 @@ module.exports={
         font14: 'Macao Water Services',
         font15: 'WeChat e-Bill',
         font16: 'Bill Management',
-        font17: 'SMS',//Reminder Service
+        font17: 'SMS Reminder Service',//Reminder Service
         font18: 'Quick Pay',
         font19: 'Water Suspension Notice',
         font20: 'Daily Water Quality',
@@ -388,7 +388,7 @@ module.exports={
         font18: 'Electronic Services Disclaimer',
         font19: 'Terms of Service and Disclaimer\n' +
             '<br/>1.Disclaimer of Liability\n' +
-            'By using the Services, you agree to the following Terms of Service.\n' +
+            '<br/>By using the Services, you agree to the following Terms of Service.\n' +
             '\n' +
             '<br/>2.Scope of Services\n' +
             '<br/>These Terms of Service apply to the use of the electronic services (hereinafter referred to as the “Services”) available on the Website, Mobile Application, and WeChat Official Account of The Macao Water Supply Company Limited (hereinafter referred to as "Macao Water"), constitute an Agreement between the User and Macao Water, and form the basis of a legal relationship between the User and Macao Water.\n' +
