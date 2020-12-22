@@ -123,6 +123,7 @@
       <van-picker
         ref="regionpicker"
         :confirm-button-text='$t("bills.font35")'
+        :cancel-button-text='$t("bills.font15")'
         show-toolbar
         :columns="idTypeList"
         @cancel="idTypeShow = false"

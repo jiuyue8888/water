@@ -127,7 +127,7 @@
       center>
       <el-card class="box-card" shadow="never" style="max-height: 394px;border: none;" :body-style="{padding:'10px 10px 10px 10px'}">
         <div class="text item">
-          <img src="@/assets/images/help.png" style="width:100%">
+          <img src="https://cmsphoto.wechattips.com/macaowater/en/help.jpg" style="width:100%">
         </div>
       </el-card>
       <span slot="footer" class="dialog-footer">

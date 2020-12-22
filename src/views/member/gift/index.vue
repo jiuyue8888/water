@@ -13,7 +13,7 @@
       </router-link>
     </div>
     <!-- 消息 -->
-    <div class="message">
+    <div v-show="false" class="message">
       <img src="@/assets/images/gift-msg.png">
     </div>
     <!-- 列表 -->
