@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { getIntegralRecord } from '@/api/integral'
+import { getIntegralRecord,type } from '@/api/integral'
 import Header from '@/components/Header'
 
 
@@ -40,12 +40,39 @@ export default {
     this.getIntegralRecord();
     this.$share();
   },
+  
   methods:{
+	  async getEn(text){
+	  	  let res = await type();
+		  let EnText='';
+		  res.data.map(item=>{
+			  if(item.twText == text){
+				  EnText = item.enText
+			  }
+		  })
+		  return EnText;
+	  },
     async getIntegralRecord(){
       let res = await getIntegralRecord();
+	  const that = this;
       if(res.code == 200){
         this.total = res.result.totalScore;
-        this.recordList = res.result.details;
+		let arr = [];
+		res.result.details.map(item=>{
+			if(window.localStorage.getItem('language')=='EN'){
+				
+				that.getEn(item.project).then(res=>{
+					arr.push(Object.assign(item,{
+						project:res
+					}))
+				})
+				
+			}else{
+				arr.push(item)
+			}
+		})
+		
+        this.recordList = arr;
       }
     }
   }

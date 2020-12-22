@@ -16,7 +16,8 @@
           <h2>● {{ item.billAmount <= 10 ? $t("billsMessage.font3") : $t("billsMessage.font4") }}</h2>
           <!-- <span>{{ item.date }}</span> -->
         </div>
-        <div class="content"><span v-if="item.aliasLb">[{{ item.aliasLb }}]</span>{{$t("billsMessage.font5")}}{{ item.warnBodyNb }}，{{ item.acctStatus }}</div>
+        <div class="content"><span v-if="item.aliasLb">[{{ item.aliasLb }}]</span>
+		{{$t("billsMessage.font5")}}{{ item.warnBodyNb }}，{{ item.acctStatus }}</div>
       </div>
     </div>
 

@@ -84,3 +84,12 @@ export function confirmVerification(data) {
     data
   })
 }
+
+//确认核销码
+export function type(data) {
+  return request({
+    url: 'dict/query/type/1',
+    method: 'post',
+    data
+  })
+}
