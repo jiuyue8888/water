@@ -3,24 +3,43 @@
     <h1>{{$t('user.font1')}}</h1>
     <div><el-button type="success" @click="register" round>{{$t('user.font2')}}</el-button></div>
     <div><el-button type="primary" @click="login" round>{{$t('user.font3')}}</el-button></div>
+  <!-- 打开关注公众号弹窗 -->
+  <el-dialog
+    class="openQrCode"
+    :visible.sync="openQrCodeShow"
+    :show-close="false"
+    :close-on-click-modal="false"
+    width="75%"
+    @open="noScroll('add')"
+    @close="noScroll('remove')"
+    center>
+    <img  src="@/assets/images/qr-wx.png" />
+    <p v-for='item in $t("dashboard.font29")'>{{item}}</p>
+  </el-dialog>
   </div>
 </template>
 
 <script>
 import { getToken,getOpenid } from '@/utils/auth'
-import { wxAuth,signIn } from '@/api/user'
+import { wxAuth,signIn,wxSubscribe } from '@/api/user'
 import { isRegister } from '@/api/user'
 
 
 export default {
   name: 'User',
+  data(){
+	  return {
+		  openQrCodeShow:false,
+		  openId:''
+	  }
+  },
    async created(){
      let openId=getOpenid()
      // if(openId) {
      //   let resLogin = await signIn(openId);
      // }
-
-
+	this.openId = openId;
+    this.wxSubscribe()
     // localStorage.referrer = this.$route.query.inviteCode;
     if(this.$route.query.inviteCode&&openId){
       this.isRegister();
@@ -36,6 +55,16 @@ export default {
         }
       })
     },
+	//判断是否关注微信公众号
+	async wxSubscribe(){
+	  let data = {
+	    openId: this.openId
+	  }
+	  let res = await wxSubscribe(data);
+	  if(res.result.subscribe == 0){
+	    this.openQrCodeShow = true;
+	  }
+	},
     //自来水wxb364df0830b4a7dd 查森互动wx745469f34326f4df
     register(){
       if(process.env.NODE_ENV === 'development'){  // 开发环境
@@ -56,6 +85,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	.openQrCode{
+	  .el-dialog__header{
+	    padding: 0;
+	    .el-dialog__headerbtn{
+	      right:9px;
+	      top: 3px;
+	    }
+	  }
+	  .el-dialog__body{
+	    img{
+	      width: calc(100% - 16px);
+	      border:8px solid #D1DFEE;
+	    }
+	    text-align: center;
+	  }
+	}
   .main{
     height:100vh;
     width: 100vw;

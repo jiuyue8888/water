@@ -9,7 +9,9 @@
 				<p>{{$t('wxBill.font4')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
 			</div>
 			<div class="title" v-else-if="dialogContent.type === 2 && dialogContent.cdType === '1' && dialogContent.cdStatus === '1'">
-				<p>{{$t('wxBill.font4')}}{{ contractNo }}{{$t('wxBill.font04')}}?</p>
+				
+				<p>{{$t('wxBill.font24')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font204')}}?</p>
+				
 			</div>
 			<div class="title" v-else><p>{{$t('wxBill.font5')}}<br/><b>{{$t('wxBill.font05')}}</b><b>{{contractNo}}</b><br/><b>{{$t('wxBill.font7')}}</b>
 			{{ dialogContent.type === 2?$t('billsDetails.font51'):dialogContent.title }}</p></div>

@@ -53,7 +53,7 @@
                                 <svg-icon icon-class="shortcut"/>
                                 <div class="name">{{$t("otherMore.font5")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/customer/water-charges',true,true,'nologin','https://www.macaowater.com/customer/water-charges')">
+                            <div class="li" @click="externalLink('/customer/water-charges',true,true,'nologin')">
                                 <svg-icon icon-class="inform"/>
                                 <div class="name">{{$t("otherMore.font6")}}</div>
                             </div>
@@ -87,11 +87,11 @@
                                 <svg-icon icon-class="more"/>
                                 <div class="name">{{$t("otherMore.font12")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/customer/application-status',true,true,'nologin','https://www.macaowater.com/customer/application-status')">
+                            <div class="li" @click="externalLink('/customer/application-status',true,true,'nologin')">
                                 <svg-icon icon-class="information"/>
                                 <div class="name">{{$t("otherMore.font13")}}</div>
                             </div>
-                            <div class="li" @click="externalLink('/customer/application-enquiry',true,true,'nologin','https://www.macaowater.com/customer/application-enquiry')">
+                            <div class="li" @click="externalLink('/customer/application-enquiry',true,true,'nologin')">
                                 <svg-icon icon-class="management-bills"/>
                                 <div class="name">{{$t("otherMore.font14")}}</div>
                             </div>
@@ -128,7 +128,7 @@
                     <div class="info">
                         <h2 class="info-title">{{$t("otherMore.font20")}}</h2>
                         <div class="ul">
-                            <div class="li" @click="externalLink('/customer/incident-report',true,true,'nologin','https://www.macaowater.com/customer/incident-report')">
+                            <div class="li" @click="externalLink('/customer/incident-report',true,true,'nologin')">
                                 <svg-icon icon-class="management-bills"/>
                                 <div class="name">{{$t("otherMore.font20")}}</div>
                             </div>
