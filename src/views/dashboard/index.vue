@@ -69,12 +69,12 @@
 		
         <p @click="externalLink('/member/bill-management',true)"><svg-icon icon-class="sms"/><br/>{{$t("dashboard.font17")}}</p>
         <p @click="routerHerf('/other/quick-payment','','nologin')"><svg-icon icon-class="shortcut"/><br/>{{$t("dashboard.font18")}}</p>
-        <p @click="externalLink('/about-macao-water/suspension-notice',true,true,'nologin')">
+        <p @click="externalLink('/about-macao-water/suspension-notice',true,true,'nologin','/about-macao-water/suspension-notice')">
 			<svg-icon icon-class="inform" /><br/>{{$t("dashboard.font19")}}</p>
-        <p @click="externalLink('/about-macao-water/daily-water-quality-report',true,true,'nologin')">
+        <p @click="externalLink('/about-macao-water/daily-water-quality-report',true,true,'nologin','/about-macao-water/daily-water-quality-report')">
 			<svg-icon icon-class="water-quality"/><br/>{{$t("dashboard.font20")}}</p>
 
-        <p @click="externalLink('/customer/tariffs-charge',true,true,'nologin')">
+        <p @click="externalLink('/customer/tariffs-charge',true,true,'nologin','/customer/tariffs-charge')">
 			<svg-icon icon-class="gas-prices"/><br/>{{$t("dashboard.font21")}}</p>
 
         <p @click="routerHerf('/other/more?login='+userLoginAuto,'','nologin')"><svg-icon icon-class="more"/><br/>{{$t("dashboard.font22")}}</p>
@@ -414,7 +414,7 @@ export default {
       });
     },
     //外部链接
-    async externalLink(url,isToken,isBind,loginType){
+    async externalLink(url,isToken,isBind,loginType,httpUrl){
       if(this.userLoginAuto==false&&loginType!='nologin'){
         this.$router.push('/user');
         return false;
@@ -424,6 +424,13 @@ export default {
         return false;
       }
       if(isToken){
+		  if (this.userLoginAuto == false && loginType == 'nologin' && httpUrl) {
+		  	
+		  	let url = this.$config.projectModel=='test'?'https://wechattest.macaowatercloud.com':'https://wechattest.macaowatercloud.com';
+		      let en = window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW';
+		  	location.href = url+httpUrl+'?lang='+en;
+		      return false;
+		  }
         let data = {
           lang: window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
           url: url
