@@ -485,7 +485,7 @@ module.exports={
         font9: 'Personal Data Collection Statement',
         font10: '(Refer to the above)',
         font11: 'Email Activation',
-        font011: '',
+        font011: 'Activate',
         font12: 'Modify Email Address',
         font13: 'Please check your email to activate your account.',
     },

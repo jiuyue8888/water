@@ -83,12 +83,12 @@ service.interceptors.response.use(
   error => {
     console.log('请求失败' + error.response) // for debug
     // console.log('请求失败' + error.response) // for debug
-    Message({
+    /*Message({
       message: '系統異常',
       type: 'error',
       duration: 5 * 1000,
       offset:150
-    })
+    })*/
     router.push('/error')
     return Promise.reject(error)
   }
