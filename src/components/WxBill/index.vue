@@ -6,7 +6,8 @@
 		 custom-class="dialog-common" :visible.sync="WeChatBillShow" :show-close="false" @open="noScroll('add')" @close="closeWeChatBillShow"
 		 center>
 			<div class="title" v-if="dialogContent.type === 3 || dialogContent.type === 4">
-				<p>{{$t('wxBill.font4')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
+				<p v-if="dialogContent.type === 4">{{$t('wxBill.font4')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
+				<p v-else>{{$t('wxBill.font34')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
 			</div>
 			<div class="title" v-else-if="dialogContent.type === 2 && dialogContent.cdType === '1' && dialogContent.cdStatus === '1'">
 				
@@ -64,6 +65,7 @@
 			}
 		},
 		data() {
+			console.log('dialogContent---',this.dialogContent)
 			return {
 				WeChatBillShow: false,
 				WeChatBillCbox: false,

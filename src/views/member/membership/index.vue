@@ -122,7 +122,7 @@
       <span slot="footer" class="dialog-footer">
         <el-button round @click="emailActivateShow = false">{{$t("serviceSubscribe.font14")}}</el-button>
 
-        <el-button round type="primary" @click="emailActivate">{{$t("billsPdf.font2")}} {{ emailBtnText }}</el-button>
+        <el-button round type="primary" @click="emailActivate">{{$t("billsPdf.font2")}} </el-button>
 
       </span>
     </el-dialog>

@@ -5,6 +5,7 @@ module.exports={
         font2: 'e-Bill service is activated for Policy No.',
         font3: 'to WeChat e-Bill (Yes/No)',
         font4: 'Email e-Bill Service is activated for ',
+        font34: 'Sepbox e-Bill Service is activated for ',
         font24: 'Smart Meter Reminder Service is activated for ',
         font04: '. Do you want to switch to WeChat e-Bill Service',
         font204: '. Do you want to switch to WeChat Smart Meter Reminder',
