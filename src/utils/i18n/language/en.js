@@ -54,7 +54,7 @@ module.exports={
         font26: 'Profile',
         font27: 'Water Quality Today',
         font28: 'High quality / Up to standards / Under close monitoring / Unsafe to drink',//多个
-        font29: ['Scan the QR code and subscribe','to MacaoWater official account，','to receive Emergency Temporary','Water Suspension Notices，','and more WeChat Services.'],
+        font29: ['Scan the QR code and subscribe','to MacaoWater official account','to receive Emergency Temporary','Water Suspension Notices','and more WeChat Services.'],
         // font29: 'Scan the QR code',
         // font30: 'Subscribe to official Macao Water WeChat account，',
         // font31: 'to receive Emergency Temporary Water Suspension Notices，',
@@ -84,7 +84,7 @@ module.exports={
         font6: 'I have read and agree to the ',
         font7: 'Please enter your email address',
         font8: 'Please enter the correct email address',
-        font9: 'Password should more than 6 digits',
+        font9: 'Password should be more than 6 digits',
         font10: 'Please read the items first',
         font11: 'Email Verified',
     },

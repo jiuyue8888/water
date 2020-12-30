@@ -87,7 +87,7 @@
 
 import { validEmail } from '@/utils/validate'
 import md5 from 'js-md5'
-import { verifyEmailApi } from '@/api/user'
+import { verifyEmailApi,userRegister } from '@/api/user'
 import { setToken,getToken } from '@/utils/auth'
 
 
@@ -160,6 +160,47 @@ export default {
     test(val){
       console.log('测试')
     },
+	//确认注册
+	async onRegister(obj){
+			 
+	  let phone = window.localStorage.getItem('zcphone'),
+	          email = obj.email,
+	          pass = obj.pass,
+	          bindToken = obj.bindToken,
+	          unbindToken = obj.unbindToken,
+	          phoneRegionId = '',
+	          areaCode = [];
+	  let data = {
+	    openId : getToken(),
+	    userPhone : phone,
+	    phoneRegionId : phoneRegionId,
+	    addressIdList :[],// this.region,
+	    userEmail : email,
+	    password : pass,
+	    bindToken : bindToken,
+	    unbindToken : unbindToken,
+	    inviteCode :localStorage.referrer
+	  }
+	  // if(sessionStorage.referrer&&sessionStorage.referrer!='undefined'){
+	  //   data.inviteCode=sessionStorage.referrer
+	  // }
+	  if(localStorage.getItem('water_85')){
+	    data['source']='water_85'
+	  }
+	  let res = await userRegister(data);
+	  if(res.code == 200){
+	    this.$router.push({
+	      path:'/user/register-succeed',
+	      query:{
+	        phone: phone,
+	        email: email,
+	        areaCode: areaCode,
+	        region: this.region,
+	        regionList: JSON.stringify(this.regionList),
+	      }
+	    });
+	  }
+	},
     //提交
     onSubmit(){
       let unbindToken = this.$route.query.unbindToken;
@@ -177,7 +218,14 @@ export default {
             if(res.code == 200){
               let path = null;
               if(unbindToken){
-                path = '/user/register-region';
+                //path = '/user/register-region';
+				this.onRegister({
+					email: this.form.email,
+					  pass: data.password,
+					  bindToken: res.result.bindToken,
+					  unbindToken: this.$route.query.unbindToken,
+					
+				})
               }else{
                 path = '/user/register-phone';
               }
