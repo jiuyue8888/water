@@ -8,7 +8,7 @@
         <i class="el-icon-arrow-left"></i>
       </div>
       <!-- 步骤条 -->
-      <el-steps :active="0" finish-status="success">
+      <el-steps :active="0" finish-status="success" v-show="!$route.query.unbindToken">
         <el-step ></el-step>
         <el-step ></el-step>
         <el-step ></el-step>

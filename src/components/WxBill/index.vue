@@ -14,7 +14,7 @@
 				<p>{{$t('wxBill.font24')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font204')}}?</p>
 				
 			</div>
-			<div class="title" v-else><p>{{$t('wxBill.font5')}}<br/><b>{{$t('wxBill.font05')}}</b><b>{{contractNo}}</b><br/><b>{{$t('wxBill.font7')}}</b>
+			<div class="title" v-else><p>{{$t('wxBill.font5')}}<br/><b style="color:#EE5050">{{$t('wxBill.font05')}}</b><b style="color:#EE5050">{{contractNo}}</b><br/><b>{{$t('wxBill.font7')}}</b>
 			{{ dialogContent.type === 2?$t('billsDetails.font51'):dialogContent.title }}</p></div>
 			<el-card class="box-card" shadow="never" :body-style="{padding:'10px'}">
 				<div class="text item" v-html="dialogContent.content">
@@ -81,7 +81,7 @@
 			  if(window.localStorage.getItem('language')=='EN'){
 			    return this.$t('wxBill.font9')+'<br>'+b+' for<br><b style="color:#EE5050">'+this.$t('wxBill.font09')+a+'</b>';
 			  }else{
-			    return this.$t('wxBill.font9')+'<b style="color:#EE5050">'+a+' <br>'+this.$t('wxBill.font09')+'</b>'+b;
+			    return this.$t('wxBill.font5')+'<b style="color:#EE5050">'+this.$t('wxBill.font05')+a+' <br>'+this.$t('wxBill.font09')+'</b>'+b;
 			  }
 			
 			},

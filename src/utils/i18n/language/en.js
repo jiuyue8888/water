@@ -16,7 +16,7 @@ module.exports={
         font07: 'Activate',
         font8: 'Terminate',
         font9: 'You are canceling all the ',
-        font09: 'for Policy No.',
+        font09: 'Policy No.',
         font10: 'Confirm',
         font11: 'To Continue',
         font12: 'Please read the Terms of Service before using the Service',
@@ -241,7 +241,7 @@ module.exports={
         font15: 'Incorrect password, please try again',
         font16:'Email Address：',
         font17:'Please enter your email address',
-        font18:'Password should more than 6 digits',
+        font18:'Password should be more than 6 digits',
         font19:'Incorrect verify code, please try again',
     },
     //bills
