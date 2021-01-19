@@ -162,12 +162,18 @@ export default {
               timestamp: res.result.timestamp, // 必填，生成签名的时间戳
               nonceStr: res.result.nonceStr, // 必填，生成签名的随机串
               signature: res.result.signature,// 必填，签名
-              jsApiList: ['updateAppMessageShareData'] // 必填，需要使用的JS接口列表
+              jsApiList: [
+				  'updateAppMessageShareData',
+				  'updateTimelineShareData',
+	              'onMenuShareAppMessage',  //旧的接口，即将废弃
+	              'onMenuShareTimeline' //旧的接口，即将废弃
+				  ] // 必填，需要使用的JS接口列表
           });
+		  
           wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
               wx.updateAppMessageShareData({
-                  title: JSON.parse(sessionStorage.userInfo).userName + this.$t('memberIntegral.font14'), // 分享标题
-                  desc: this.$t('memberIntegral.font15'), // 分享描述
+                  title: JSON.parse(sessionStorage.userInfo).userName + that.$t('memberIntegral.font14'), // 分享标题
+                  desc: that.$t('memberIntegral.font15'), // 分享描述
                   link: "https://"+location.hostname+"?redirect=user&inviteCode=" + res.result.inviteCode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                   imgUrl: 'http://'+location.hostname+'/' + wxShareImg, // 分享图标
                   success: function (res) {

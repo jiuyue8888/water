@@ -88,6 +88,7 @@
 import { validEmail } from '@/utils/validate'
 import md5 from 'js-md5'
 import { verifyEmailApi,userRegister } from '@/api/user'
+
 import { setToken,getToken } from '@/utils/auth'
 
 
@@ -121,6 +122,8 @@ export default {
         email: '',
         pass: '',
       },
+	  regionList:[],
+	  region:'',
       rules: {
         email: [
           { validator: validateEmail, trigger: 'blur' }
@@ -133,11 +136,12 @@ export default {
 
     }
   },
-  created(){
+  async created(){
     //更新openId
     if(!getToken()){
       setToken(this.$route.query.openId);
     }
+	//let list = await getMspList();
 
     this.$share();
   },
@@ -181,6 +185,8 @@ export default {
 	    unbindToken : unbindToken,
 	    inviteCode :localStorage.referrer
 	  }
+	  
+	  
 	  // if(sessionStorage.referrer&&sessionStorage.referrer!='undefined'){
 	  //   data.inviteCode=sessionStorage.referrer
 	  // }

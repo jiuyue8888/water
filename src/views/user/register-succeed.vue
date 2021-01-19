@@ -32,10 +32,11 @@
             </div>
           </li>
           <li v-if="isEmail"><hr style="border-top:1px solid #F1F7FB" /></li>
-          <li>
+          <li v-show="filterRegion.length>0">
             <p>{{$t("registerSucceed.font5")}}</p>
           </li>
-          <li>
+		  
+          <li v-show="filterRegion.length>0">
             <div class="subscription">
               <el-row :gutter="20">
                 <el-col :span="8" v-for="item in filterRegion" :key="item.value">
@@ -64,18 +65,19 @@
   import {signIn } from '@/api/user'
   import {getToken } from '@/utils/auth'
   import { getBillList } from '@/api/bill'
-  import {mspReg} from '@/api/membership'
+  import {mspReg,getMspList,townList} from '@/api/membership'
+
   export default {
     name: 'RegisterSucceed',
     data(){
       return {
         isEmail:this.$route.query.email ? true : false,
         form: {
-          phone: '',
-          email: '',
-          areaCode: '',
-          region: '',
-          regionList: '',
+          phone: this.$route.query.phone||'',
+          email: this.$route.query.email||'',
+          areaCode: this.$route.query.areaCode||'',
+          region: this.$route.query.region||[],
+          regionList: this.$route.query.regionList||[],
         },
         filterRegion:[],
         memberInfo:{}
@@ -86,14 +88,7 @@
       if(openId){
         let resLogin = await signIn(openId);
 
-        let region=this.$route.query.region
-        if(region.length!=0){
-          let data={
-            subWaterStopType:region.length==0?'0':'2',
-            townCds:region
-          }
-          await mspReg(data)
-        }
+        
 
 
         let resUser = await getBillList();//获取用户信息
@@ -110,12 +105,60 @@
             sessionStorage.badgeShow = true;
           }
         }
-      }
-      this.onFilterRegion();
-
+		
+		
+		
+		
+		
+		
+	 }
+      //this.onFilterRegion();
+console.log(this.$route.query.regionList)
+if(this.$route.query.regionList&&JSON.parse(this.$route.query.regionList).length==0){
+	this.showArea();
+}else{
+	this.onFilterRegion();
+}
       this.$share();
+      
     },
     methods:{
+		async showArea(){
+			let list = await getMspList()
+			let res = await townList();
+			let arr=[]
+			const that = this;
+			
+			
+			if(list.code == 200&&list.data.subWaterStopType==2&&res.code == 200){
+				let region=list.data.result
+				if(region.length!=0){
+				  let data={
+				    subWaterStopType:region.length==0?'0':'2',
+				    townCds:region
+				  }
+				  await mspReg(data)
+				}
+				res.data.forEach(item => {
+					list.data.result.map(obj=>{
+						if(obj.townCd==item.cd){
+							if(window.localStorage.getItem('language')=='EN'){
+								
+								arr.push({id: item.cd, value: item.lbAbb})
+							}else{
+								
+								arr.push({id: item.cd, value: item.lb})
+							}
+						}
+					})
+							  
+				 
+				})
+				console.log('地区接口数据---',arr)
+				that.filterRegion = arr;
+				
+			}
+		},
       //过滤地区
       onFilterRegion(){
         this.form = this.$route.query;
@@ -131,6 +174,7 @@
             }
           })
         })
+		
         this.filterRegion = arr;
       },
       //返回

@@ -127,7 +127,7 @@
       center>
       <el-card class="box-card" shadow="never" style="max-height: 394px;border: none;" :body-style="{padding:'10px 10px 10px 10px'}">
         <div class="text item">
-          <img src="https://cmsphoto.wechattips.com/macaowater/en/help.jpg" style="width:100%">
+          <img src="https://cmsphoto.wechattips.com/help.jpg" style="width:100%">
         </div>
       </el-card>
       <span slot="footer" class="dialog-footer">
@@ -296,7 +296,7 @@ export default {
   async created(){
     this.openFullScreen();
     this.openId = getToken();
-	//signInh();
+	signIn(this.openId);
     // let pass='DgSKK'
     // console.log(pass.toLowerCase());
     // console.log(md5(pass));
@@ -319,11 +319,28 @@ export default {
     let result=await getBannerList()
     if(result.code==200){
       for(let i in result.data){
-        bannerList.push({
-          imgUrl:result.data[i].url,
-          url:result.data[i].targetUrl,
-        })
+		  if(localStorage.getItem('language')=='EN'){
+			  if(result.data[i].bannerId%2==0){
+				  bannerList.push({
+				    imgUrl:result.data[i].url,
+				    url:result.data[i].targetUrl,
+				    bannerId:result.data[i].bannerId,
+				  })
+			  }
+		  }else{
+			  if(result.data[i].bannerId%2==1){
+				  bannerList.push({
+					  
+					imgUrl:result.data[i].url,
+					bannerId:result.data[i].bannerId,
+					url:result.data[i].targetUrl,
+				  })
+			  }
+			  
+		  }
+        
       }
+	  console.log('bannerList',bannerList)
       this.bannerList=bannerList
     }
 

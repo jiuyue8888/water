@@ -6,15 +6,15 @@
 		 custom-class="dialog-common" :visible.sync="WeChatBillShow" :show-close="false" @open="noScroll('add')" @close="closeWeChatBillShow"
 		 center>
 			<div class="title" v-if="dialogContent.type === 3 || dialogContent.type === 4">
-				<p v-if="dialogContent.type === 4">{{$t('wxBill.font4')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
-				<p v-else>{{$t('wxBill.font34')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
+				<p v-if="dialogContent.type === 4">{{$t('wxBill.font4')}}<br/><b style="color:#EE5050">{{$t('wxBill.font05')}}{{ contractNo }}</b><br/>{{$t('wxBill.font04')}}?</p>
+				<p v-else>{{$t('wxBill.font34')}}<br/><b style="color:#EE5050">{{$t('wxBill.font05')}}{{ contractNo }}</b>{{$t('wxBill.font04')}}?</p>
 			</div>
 			<div class="title" v-else-if="dialogContent.type === 2 && dialogContent.cdType === '1' && dialogContent.cdStatus === '1'">
 				
-				<p>{{$t('wxBill.font24')}}<b style="color:#EE5050">{{lan=='EN'?'Policy No.':''}}{{ contractNo }}</b>{{$t('wxBill.font204')}}?</p>
+				<p>{{$t('wxBill.font24')}}<br/><b style="color:#EE5050">{{$t('wxBill.font05')}}{{ contractNo }}</b><br/>{{$t('wxBill.font204')}}?</p>
 				
 			</div>
-			<div class="title" v-else><p>{{$t('wxBill.font5')}}<br/><b style="color:#EE5050">{{$t('wxBill.font05')}}</b><b style="color:#EE5050">{{contractNo}}</b><br/><b>{{$t('wxBill.font7')}}</b>
+			<div class="title" v-else><p>{{$t('wxBill.font5')}}<br/><b style="color:#EE5050">{{$t('wxBill.font05')}}</b><b style="color:#EE5050">{{contractNo}}</b><br/>{{$t('wxBill.font7')}}
 			{{ dialogContent.type === 2?$t('billsDetails.font51'):dialogContent.title }}</p></div>
 			<el-card class="box-card" shadow="never" :body-style="{padding:'10px'}">
 				<div class="text item" v-html="dialogContent.content">
@@ -81,7 +81,7 @@
 			  if(window.localStorage.getItem('language')=='EN'){
 			    return this.$t('wxBill.font9')+'<br>'+b+' for<br><b style="color:#EE5050">'+this.$t('wxBill.font09')+a+'</b>';
 			  }else{
-			    return this.$t('wxBill.font5')+'<b style="color:#EE5050">'+this.$t('wxBill.font05')+a+' <br>'+this.$t('wxBill.font09')+'</b>'+b;
+			    return this.$t('wxBill.font5')+'<b style="color:#EE5050">'+this.$t('wxBill.font05')+a+' <br></b>'+this.$t('wxBill.font09')+b;
 			  }
 			
 			},
@@ -178,7 +178,7 @@
 	.dialog-common {
 		.title {
 			text-align: center;
-			padding: 0 30px;
+			padding: 0 10px;
 		}
 
 		.title b {

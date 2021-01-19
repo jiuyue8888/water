@@ -10,10 +10,10 @@
       <div class="date" v-if="messageList.length !== 0">{{ date }} {{$t("billsMessage.font1")}}</div>
       <div class="date" v-else>{{$t("billsMessage.font2")}}</div>
       <!-- 列表 -->
-      <div class="list" v-for="(item,index) in messageList" :key="index" v-show="item.billAmount > 10">
+      <div class="list" v-for="(item,index) in messageList" :key="index" v-show="!item.payable&&item.billAmount>10">
         <!-- 标题 -->
         <div class="title">
-          <h2>● {{ item.billAmount <= 10 ? $t("billsMessage.font3") : $t("billsMessage.font4") }}</h2>
+          <h2>● {{$t("billsMessage.font4")}}</h2>
           <!-- <span>{{ item.date }}</span> -->
         </div>
         <div class="content"><span v-if="item.aliasLb">[{{ item.aliasLb }}]</span>
