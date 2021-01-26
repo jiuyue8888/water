@@ -226,6 +226,7 @@ export default {
             return false;
           }
 			window.localStorage.setItem('zcphone',this.form.phone)
+			window.localStorage.setItem('zareaCode',this.form.areaCode)
 
           let data = {
             verifyCode : this.form.code,

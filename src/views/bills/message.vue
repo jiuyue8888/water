@@ -7,7 +7,7 @@
     <!-- 主体内容 -->
     <div class="body">
       <!-- 更新日期 -->
-      <div class="date" v-if="messageList.length !== 0">{{ date }} {{$t("billsMessage.font1")}}</div>
+      <div class="date" v-if="messageList.length !== 0">{{lan=='EN'?$t("billsMessage.font1")+' '+date:date+' '+$t("billsMessage.font1")}}</div>
       <div class="date" v-else>{{$t("billsMessage.font2")}}</div>
       <!-- 列表 -->
       <div class="list" v-for="(item,index) in messageList" :key="index" v-show="!item.payable&&item.billAmount>10">
@@ -36,6 +36,7 @@ export default {
   },
   data(){
     return {
+		lan:window.localStorage.getItem('language'),
       date: sessionStorage.remindListDate ? sessionStorage.remindListDate : '',
       messageList:[{
 		  billAmount:0,

@@ -32,6 +32,8 @@
             </div>
           </li>
           <li v-if="isEmail"><hr style="border-top:1px solid #F1F7FB" /></li>
+		  
+		  
           <li v-show="filterRegion.length>0">
             <p>{{$t("registerSucceed.font5")}}</p>
           </li>
@@ -137,7 +139,7 @@ if(this.$route.query.regionList&&JSON.parse(this.$route.query.regionList).length
 				    subWaterStopType:region.length==0?'0':'2',
 				    townCds:region
 				  }
-				  await mspReg(data)
+				  //await mspReg(data)
 				}
 				res.data.forEach(item => {
 					list.data.result.map(obj=>{

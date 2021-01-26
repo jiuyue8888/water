@@ -7,8 +7,8 @@ module.exports={
         font4: 'Email e-Bill Service is activated for ',
         font34: 'Sepbox e-Bill Service is activated for ',
         font24: 'Smart Meter Reminder Service is activated for ',
-        font04: '. Do you want to switch to WeChat e-Bill Service',
-        font204: '. Do you want to switch to WeChat Smart Meter Reminder',
+        font04: 'Do you want to switch to WeChat e-Bill Service',
+        font204: 'Do you want to switch to WeChat Smart Meter Reminder',
         font5: 'You are activating for',
         font05: 'Policy No.',
         font6: 'I understand and agree to the above Terms and Conditions of the Service',
@@ -364,7 +364,7 @@ module.exports={
         font52: 'Warning message push',
     },
     billsMessage: {
-        font1: 'message updated on: ',
+        font1: 'Message updated on: ',
         font2: 'No new message',
         font3: 'Paid',
         font4: 'Unpaid',
@@ -471,7 +471,7 @@ module.exports={
         font2: 'Submit',
     },
     wechatAstrict: {
-        font1: 'Due to the limitation of WeChat, please open this page with the default browser by click on the top right corner',
+        font1: 'Due to the limitaion of WeChat,Please open this page with the default browser by clicking on the top right corner.',
     },
     //member
     memberMembership: {

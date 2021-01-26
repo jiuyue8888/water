@@ -23,8 +23,11 @@
 
 <style lang="scss" scoped>
   .content{
-    padding-top: 260px;
-    height: calc(100vh - 260px);
+    
+	width: 100%;
+	box-sizing: border-box;
+	padding: 260px 30px;
+    height: 100vh;
     font-size: 18px;
     background-color: #fff;
     text-align: center;

@@ -57,8 +57,8 @@
 
 <script>
 
-  import { userRegister, getAreaList } from '@/api/user'
-  import {townList} from '@/api/membership'
+  import { userRegister, getAreaList,signIn } from '@/api/user'
+  import {townList,mspReg} from '@/api/membership'
   import { getToken } from '@/utils/auth'
 
   export default {
@@ -68,14 +68,17 @@
         isEmail:this.$route.query.email ? true : false,
         regionShow:false,
         region:[],
+		lock:true,
         regionList:[]
       }
     },
-    created(){
+    async created(){
+		
       this.getRegionList();
       this.noScroll('remove');
 
       this.$share();
+	  //signIn
     },
     methods:{
       //获取地区列表
@@ -97,6 +100,13 @@
       },
       //提交
       onSubmit(){
+		  if(!this.lock){
+			  return;
+		  }
+		  this.lock=false;
+		  setTimeout(()=>{
+		  		this.lock=true;
+		  },1500)
         if(this.region.length === 0){
           this.regionShow = true;
         }else{
@@ -126,23 +136,37 @@
         }
         // if(sessionStorage.referrer&&sessionStorage.referrer!='undefined'){
         //   data.inviteCode=sessionStorage.referrer
-        // }
+        // }/api/v1/msp/reg
         if(localStorage.getItem('water_85')){
           data['source']='water_85'
         }
         let res = await userRegister(data);
-        if(res.code == 200){
-          this.$router.push({
-            path:'/user/register-succeed',
-            query:{
-              phone: phone,
-              email: email,
-              areaCode: areaCode,
-              region: this.region,
-              regionList: JSON.stringify(this.regionList),
-            }
-          });
-        }
+		if(res.code == 200){
+			let openId=getToken()
+			let res2 = await signIn(openId);
+			if(res2.code == 200){
+				let res1 = await mspReg({
+					subWaterStopType:this.region.length==0?'0':'2',
+					townCds:this.region
+				});
+				if(res1.code==200){
+				  this.$router.push({
+				    path:'/user/register-succeed',
+				    query:{
+				      phone: phone,
+				      email: email,
+				      areaCode: areaCode,
+				      region: this.region,
+				      regionList: JSON.stringify(this.regionList),
+				    }
+				  });
+				}
+			}
+		}
+		
+		
+		
+		
       },
       //返回
       back(){

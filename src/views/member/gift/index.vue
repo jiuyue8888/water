@@ -54,8 +54,8 @@
 <!--          兑换须知{{ item }}-->
 <!--        </div>-->
         <div style="min-height: 100px;">
-          <div class="text item">
-            {{ form.remark }}
+          <div class="text item" v-html="form.remark">
+            
           </div>
         </div>
       </el-card>
