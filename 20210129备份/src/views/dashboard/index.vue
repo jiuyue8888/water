@@ -468,7 +468,7 @@ export default {
       }
       if(isToken){
         let data = {
-          lang: window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
+          lang: 'zh_TW',
           url: url
         }
         let res = await autoJump(data);
