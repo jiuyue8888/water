@@ -95,7 +95,7 @@
       <el-carousel arrow="never" class="todayCarousel" trigger="click" height="60px">
         <el-carousel-item v-for="item in waterQualityList" :key="item.locationId">
 <!--          <div class="body" @click="!messageShow && externalLink('https://m.macaowater.com/about-macao-water/daily-water-quality-report',false)">-->
-          <div class="body" @click="exLink('https://www.macaowater.com/about-macao-water/daily-water-quality-report',false,'nologin')">
+          <div class="body" @click="exLink(`https://www.macaowater.com/about-macao-water/daily-water-quality-report?lang=${lan=='ZH'?'zh_TW':'en_US'}`,false,'nologin')">
             <h3 class="text">{{ item.location }}</h3>
 			<span v-if="lan=='EN'" class="newImg"><img src="https://cmsphoto.wechattips.com/macaowater/en/High%20quality%402x.png"/></span>
             <svg-icon v-else class="quality" style="font-size: 65px" icon-class="quality"/>
@@ -116,7 +116,7 @@
 
     <!-- 使用帮助弹窗 -->
     <el-dialog
-      :title='$t("dashboard.font12")'
+      
       width="90%"
       custom-class="dialog-common helpDialog"
       :visible.sync="helpShow"
@@ -125,6 +125,9 @@
       @open="noScroll('add')"
       @close="noScroll('remove')"
       center>
+	  <div slot="title" class="el-dialog__title" @click="showV">
+	      {{$t("dashboard.font12")}}
+	    </div>
       <el-card class="box-card" shadow="never" style="max-height: 394px;border: none;" :body-style="{padding:'10px 10px 10px 10px'}">
         <div class="text item">
           <img src="https://cmsphoto.wechattips.com/help.jpg" style="width:100%">
@@ -203,6 +206,7 @@ export default {
   },
   data(){
     return {
+		v:0,
 		lan:window.localStorage.getItem('language'),
       contractNb:Number(sessionStorage.contractNb),
       badgeShow:sessionStorage.badgeShow == 'false' ? false : true,
@@ -348,6 +352,16 @@ export default {
 
   },
   methods:{
+	  //显示版本
+	  showV(){
+		  let v = this.v;
+		  v++;
+		  this.v = v
+		  if(v==15){
+			  this.$message('v21-02-18-v1')
+			  this.v = 0
+		  }
+	  },
 	//语言切换
     langChange(type){
 		this.lanIcon = false;
@@ -468,7 +482,7 @@ export default {
       }
       if(isToken){
         let data = {
-          lang: window.localStorage.getItem('language')=='EN'?'en_US':'zh_TW',
+          lang: window.localStorage.getItem('language')=='ZH'?'zh_TW':'en_US',
           url: url
         }
         let res = await autoJump(data);

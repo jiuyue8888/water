@@ -72,7 +72,7 @@
           <div class="average">{{$t("billsDetails.font14")}}：{{ formatNumberRgx(average) }}L</div>
           <div class="charts">
             <ve-histogram :data="histogramData" :legend-visible="false" :extend="chartExtend" height="220px" width="100%" 
-			style="top:-50px;left: 0px"></ve-histogram>
+			style="top:-50px;left:0px" :settings="options"></ve-histogram>
 			
           </div>
           <div class="rule-tip">*{{$t("billsDetails.font15")}}</div>
@@ -242,6 +242,7 @@
       this.colors = ['#E3EFCB','#9DCB44','#FD5252'];
       this.chartSettings = {
         radius: 45,
+		
         label: {
           normal: {
             show: false,
@@ -250,12 +251,17 @@
             show: false,
           }
         },
-        offsetY:65,
+        offsetY:50,
       }
       this.chartExtend = {
         itemStyle:{
           color:'#9DCB44',
         },
+		grid: {
+			left: '-30',
+			right: '20',
+			containLabel: true
+		},
         series: {
           barWidth: 16
         },
