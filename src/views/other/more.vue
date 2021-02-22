@@ -5,7 +5,7 @@
         <!-- 页头 -->
         <div class="more-head">
             <Header :metaTitle='$t("dashboard.font37")'/>
-            <div class="banner">
+            <div class="banner" v-show="false">
                 <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
                     <van-swipe-item v-for="(item,index) in bannerList" :key="index">
                         <img :src="item.imgUrl" @click="bannerLink(item.url)">
@@ -18,7 +18,7 @@
                 <ul>
                     <li v-for="(item,index) in navList"
                         :class="{'active':navIndex==index}"
-						:style="lan=='EN'&&index==0?'width:90px':''"
+						:style="lan=='EN'&&index==0?'width:100px':''"
                         @click="navClick(index)"
                     >{{item}}</li>
                 </ul>
@@ -229,10 +229,10 @@
                 navList:[this.$t("otherMore.font1"),this.$t("otherMore.font7"),this.$t("otherMore.font16"),this.$t("otherMore.font20"),this.$t("otherMore.font21")],
                 navIndex:0,
                 bannerList: [
-                    {
-                        imgUrl: require('../../assets/images/banner-9.png'),
-                        url: 'http://mwregister.wechattips.com',
-                    },
+                    //{
+                    //    imgUrl: require('../../assets/images/banner-9.png'),
+                    //    url: 'http://mwregister.wechattips.com',
+                    //},
                     // {
                     //     imgUrl: require('../../assets/images/banner-4.png'),
                     //     url: 'https://wechattest.macaowatercloud.com/home',
@@ -440,6 +440,7 @@
         left: 0;
         top: 0;
         width: 100%;
+		z-index: 999;
     }
     .banner {
         width: calc(86% + 24px);
@@ -460,7 +461,7 @@
 
     .menu-info {
         width: 100%;
-        height: calc(100% - 6.55333rem);
+        height: calc(100% - 2.45333rem);
         position: fixed;
         left: 0;
         bottom: 0;
