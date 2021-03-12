@@ -252,7 +252,7 @@ module.exports={
         font4: 'Amount Due',
         font5: 'Bill Paid',
         font6: 'Details',
-        font7: 'WeChat e-Bill Service',
+        font7: 'WeChat e-Bill Service ',
         font8: 'No Bill',
         font9: 'Delete Policy No.',
         font10: 'Add Bill',

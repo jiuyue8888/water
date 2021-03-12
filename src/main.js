@@ -42,7 +42,7 @@ Vue.prototype.$message = function (text) {
   })
 }
 
-const projectModel='formal';//正式：formal，测试：test，
+const projectModel='test';//正式：formal，测试：test，
 
 Vue.prototype.$config = {
   projectModel:projectModel,
