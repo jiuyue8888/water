@@ -1,5 +1,9 @@
 <template>
   <div class="main" id="index">
+	  <div class="scroll" v-show="scrollPop">
+		  <a :href="targetUrl" class="scrollBody" ref="scroll">{{scroll}}</a>
+		  <img src="../../assets/mw85/close.png" @click="scrollPop=false"/>
+	  </div>
     <!-- 基本信息 -->
     <div class="basic-Info">
       <div class="top">
@@ -206,6 +210,9 @@ export default {
   },
   data(){
     return {
+		scrollPop:true,
+		scroll:'',
+		targetUrl:'',
 		v:0,
 		lan:window.localStorage.getItem('language'),
       contractNb:Number(sessionStorage.contractNb),
@@ -283,8 +290,11 @@ export default {
     }
   },
   computed:{
+	  
     //判断菜单块的头部边界距离
     menuMarginTop(){
+		this.scrollAction()
+		
       if(this.billInfoShow){
         return '100px'
       }else{
@@ -298,6 +308,7 @@ export default {
 
   },
   async created(){
+	  
     this.openFullScreen();
     this.openId = getToken();
 	signIn(this.openId);
@@ -318,40 +329,81 @@ export default {
     }
 	
 
-
+	const that = this
     let bannerList=[]
     let result=await getBannerList()
     if(result.code==200){
       for(let i in result.data){
-		  if(localStorage.getItem('language')=='EN'){
-			  if(result.data[i].bannerId%2==0){
-				  bannerList.push({
-				    imgUrl:result.data[i].url,
-				    url:result.data[i].targetUrl,
-				    bannerId:result.data[i].bannerId,
-				  })
-			  }
-		  }else{
-			  if(result.data[i].bannerId%2==1){
-				  bannerList.push({
-					  
-					imgUrl:result.data[i].url,
-					bannerId:result.data[i].bannerId,
-					url:result.data[i].targetUrl,
-				  })
+		  if(result.data[i].type==2){
+			  console.log('result.data[i]====',result.data[i])
+			  if(localStorage.getItem('language')=='EN'){
+				  if(result.data[i].bannerId%2==0){
+				  	that.scroll = result.data[i].title
+				  	that.targetUrl = result.data[i].targetUrl
+				  }
+				  
+			  }else{
+				  if(result.data[i].bannerId%2==1){
+					  that.scroll = result.data[i].title
+					  that.targetUrl = result.data[i].targetUrl
+				  }
+				  
 			  }
 			  
+		  }else{
+			  if(localStorage.getItem('language')=='EN'){
+			  			  if(result.data[i].bannerId%2==0){
+			  				  bannerList.push({
+			  				    imgUrl:result.data[i].url,
+			  				    url:result.data[i].targetUrl,
+			  				    bannerId:result.data[i].bannerId,
+			  				  })
+			  			  }
+			  }else{
+			  			  if(result.data[i].bannerId%2==1){
+			  				  bannerList.push({
+			  					  
+			  					imgUrl:result.data[i].url,
+			  					bannerId:result.data[i].bannerId,
+			  					url:result.data[i].targetUrl,
+			  				  })
+			  			  }
+			  			  
+			  }
 		  }
+		  
         
       }
 	  console.log('bannerList',bannerList)
       this.bannerList=bannerList
+	  
     }
 
     this.$share();
 
   },
   methods:{
+	  scrollAction(){
+	  		  const that = this
+	  		  console.log('scroll=======',this.$refs)
+			  const el = document.getElementsByClassName('scrollBody')[0]
+			  //const el = this.$refs.scroll
+	  		  if(el){
+				  const w = el.offsetWidth - document.body.clientWidth
+	  		  	const width =  w>0?w + 60:0
+				
+				
+	  		  	const t = parseInt(el.offsetWidth/document.body.clientWidth*100)/100*10
+				const time = t>3?t:3
+	  		  	el.style.transition = 'all '+time+'s'
+	  		  	el.style.webkitTransition = 'all '+time+'s'
+	  		  	el.style.left = -width+'px'
+	  		  	setTimeout(()=>{
+	  		  		//that.scrollPop=false;
+	  		  	},time*1000)
+	  		  }
+	  },
+	  
 	  //显示版本
 	  showV(){
 		  let v = this.v;
@@ -686,6 +738,45 @@ export default {
 </script>
 
 <style lang="scss">
+	body{
+		width: 100%;
+		overflow-x: hidden;
+	}
+	.main{
+		width: 100vw;
+		overflow-x: hidden;
+	}
+	.scroll{
+		position: relative;
+		width: 8000%;
+		height: 36px;
+		line-height: 36px;
+		color: #fff;
+		font-size: 15px;
+		box-sizing: border-box;
+		padding: 0 10px;
+		font-weight: 400;
+background: #EE4E4E;
+img{
+	position: absolute;
+	left: calc(100vw - 40px);
+	top: 3px;
+	width: 20px;
+	height: 20px;
+	padding: 5px 10px;
+	background: #EE4E4E;
+}
+	}
+	.scrollBody{
+		position: relative;
+		left: 0;
+		text-decoration: none;
+		transition: all 2s;
+		-webkit-transition: all 2s;
+		transition-timing-function: linear!important;
+		-webkit-transition-timing-function: linear!important;
+		
+	}
 /*微信账单右上角的红点*/
 .menu .content .el-badge__content.is-fixed{
   position: absolute;

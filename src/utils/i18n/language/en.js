@@ -529,6 +529,7 @@ module.exports={
         font17: 'Cancel',
         font18: 'Copy success',
         font19: 'Copy failed',
+        font20: 'Invite friends to  subscribe WeChat <br/>e-Bill',
     },
     memberGift: {
         font1: 'Points',

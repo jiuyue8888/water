@@ -98,11 +98,18 @@
 					this.submitLoadIng = true
 					let res = null;
 					if (this.dialogContent.type == 1 || this.dialogContent.type == 3 || this.dialogContent.type == 4) {
-						let data = {
+						const shareId = localStorage.getItem('shareId')
+						let data = (shareId==undefined||shareId==null||shareId=='undefined'||shareId=='null')?{
+							memberNb: sessionStorage.memberNb,
+							bodyNb: this.contractNo,
+							operate: boolean ? 1 : 0,
+							openId: getToken()
+						}:{
 							memberNb: sessionStorage.memberNb,
 							bodyNb: this.contractNo,
 							operate: boolean ? 1 : 0,
 							openId: getToken(),
+							inviteUserId:localStorage.getItem('shareId')
 						}
 						res = await bindWxBill(data);
 						// res = {code:200};

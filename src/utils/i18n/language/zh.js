@@ -505,6 +505,7 @@ module.exports={
         font17: '取消',
         font18: '複製成功',
         font19: '複製失敗',
+        font20: '邀請好友開通電子賬單',
     },
     memberGift: {//s
         font1: '積分',

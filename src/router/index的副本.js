@@ -215,7 +215,7 @@ router.beforeEach((to, from, next) => {
                         // openId = 'osT1v1MdPd5T96hedR4gFotaFI3c';//刘杨
                         // openId = 'osT1v1MEYKtqCpt_tNj05dk7ndXM';//熊总
                         // openId = 'osT1v1InCXcpvRDENGmKrPzOD4HE';//余枫
-                        openId = 'osT1v1JC54LQUZNwRBzaBhvYL5wU';//my
+                        openId = 'osT1v1InCXcpvRDENGmKrPzOD4HE';//my
                         // openId = 'olGwuv5TzXRP1iieGEDYKAH7pOOo' //osT1v1MdPd5T96hedR4gFotaFI3c 'osT1v1JC54LQUZNwRBzaBhvYL5wU'//'olGwuv5TzXRP1iieGEDYKAH7pOOo';
                     } else { // 生产环境
                         openId = UrlSearch().openId;
@@ -248,7 +248,7 @@ router.beforeEach((to, from, next) => {
             }else if(to.path == '/member/integral'){
                 let openId = null;
                 if (process.env.NODE_ENV === 'development') {  // 开发环境
-                    openId = 'osT1v1JC54LQUZNwRBzaBhvYL5wU'// 'olGwuv5TzXRP1iieGEDYKAH7pOOo';
+                    openId = 'osT1v1InCXcpvRDENGmKrPzOD4HE'// 'olGwuv5TzXRP1iieGEDYKAH7pOOo';
                 } else { // 生产环境
                     openId = to.query.openId;
                 }

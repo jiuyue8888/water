@@ -36,8 +36,22 @@
           </div>
           <el-button @click="onRecommend(data.recommendStatus)" :class="{ 'baby-blue' : data.recommendStatus == 2, 'deep-blue' : data.recommendStatus == 0 }" :type="data.recommendStatus == 1 ? 'success' : ''" size="mini" round>{{ btnText(data.recommendStatus) }}</el-button>
         </li>
+		<li>
+		  <div class="left">
+		    <img src="../../../assets/images/icon.png" />
+		    <div class="text">
+		      <p class="title" v-html="$t('memberIntegral.font20')"></p>
+		      <p class="award">{{$t('memberIntegral.font2')}}</p>
+		    </div>
+		  </div>
+		  <el-button @click="showShare(data.wxBillStatus)" :class="{ 'baby-blue' : data.wxBillStatus == 2, 'deep-blue' : data.wxBillStatus == 0 }" :type="data.wxBillStatus == 1 ? 'success' : ''" size="mini" round>{{ btnText(data.wxBillStatus) }}</el-button>
+		</li>
       </ul>
     </div>
+	<div class="sharepop" v-show="showpop" @click="showpop=false">
+		<img src="../../../assets/images/shareen.png" v-if="lan=='EN'">
+		<img src="../../../assets/images/sharezh.png" v-else>
+	</div>
 
     <!-- 复制链接弹窗 -->
     <el-dialog
@@ -73,7 +87,9 @@ export default {
   data(){
     return {
       url: '',
+	  lan:window.localStorage.getItem('language'),
       copyUrlShow: false,
+      showpop: false,
       data:{},
       maskShow: false,
     }
@@ -96,6 +112,7 @@ export default {
       let res = await scoreTask();
       if(res.code == 200){
         this.data = res.result;
+		localStorage.setItem('userId',res.result.userId)
       }
     },
     //按钮文本
@@ -145,9 +162,25 @@ export default {
         return false
       }
     },
+	async showShare(state){
+		const that = this
+		if(state == 1){
+			let data = {
+			  taskType : 'wxbill',
+			  level : 2
+			}
+		  let res = await recommend(data);
+		  if(res.code == 200){
+			  that.scoreTask();
+		  }
+		}else{
+		  that.showpop=true
+		}
+	},
     //推薦好友註冊
     async onRecommend(state){
       let that = this;
+	  console.log('state====',state)
       if(state == 0){
         let data = {
           taskType : 'tuijian',
@@ -162,12 +195,7 @@ export default {
               timestamp: res.result.timestamp, // 必填，生成签名的时间戳
               nonceStr: res.result.nonceStr, // 必填，生成签名的随机串
               signature: res.result.signature,// 必填，签名
-              jsApiList: [
-				  'updateAppMessageShareData',
-				  'updateTimelineShareData',
-	              'onMenuShareAppMessage',  //旧的接口，即将废弃
-	              'onMenuShareTimeline' //旧的接口，即将废弃
-				  ] // 必填，需要使用的JS接口列表
+              jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData', 'onMenuShareAppMessage', 'onMenuShareTimeline','hideMenuItems'],
           });
 		  
           wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
@@ -178,11 +206,11 @@ export default {
                   imgUrl: 'http://'+location.hostname+'/' + wxShareImg, // 分享图标
                   success: function (res) {
                     that.maskShow = true;
-                    console.log(res,'成功');
+                    console.log('成功',res);
                     // 设置成功
                   },
                   fail: function(res){
-                    console.log(res,'失败')
+                    console.log('失败',res)
                   }
               })
           });
@@ -213,6 +241,20 @@ export default {
 
 <style lang="scss" scoped>
 /*内容*/
+.sharepop{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background: rgba(0,0,0,0.8);
+	img{
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
 .body{
   margin:15px;
   ul{
@@ -222,20 +264,25 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items:center;
-      width: 85%;
-      height: 68px;
+      width: 100%;
+	  box-sizing: border-box;
+      height: 100px;
       margin:15px auto;
-      padding:15px 21px 15px 30px;
+      padding:15px 21px 15px 20px;
       border-radius:8px;
       background:#fff;
       .left{
         display: flex;
         align-items:center;
+		>img{
+			width: 40px;
+		}
         .text{
           padding-left: 11px;
-          line-height: 25px;
+          line-height: 20px;
+		  width: 170px;
           .title{
-            font-size: 18px;
+            font-size: 17px;
             color: #333;
             font-weight: bold;
           }

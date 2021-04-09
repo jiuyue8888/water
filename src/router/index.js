@@ -6,6 +6,7 @@ import {setToken, getToken,getOpenid} from '@/utils/auth'
 Vue.use(Router)
 
 
+
 //不需要验证权限页面
 export const constantRoutes = [
     {
@@ -162,7 +163,6 @@ const createRouter = () => new Router({
 
 
 const router = createRouter()
-
 router.beforeEach((to, from, next) => {
     // console.log(to);
     //解除禁止页面滚动
@@ -188,6 +188,7 @@ router.beforeEach((to, from, next) => {
         if (isWeChatBoolean) {
             next('401')
         } else {
+			
             if (to.path == '/') {
                 // console.log(UrlSearch(),'redirect')
                 //此参考为微信分享,重定向到注册页面
@@ -212,7 +213,7 @@ router.beforeEach((to, from, next) => {
                         // openId = 'osT1v1MdPd5T96hedR4gFotaFI3c';//刘杨
                         // openId = 'osT1v1MEYKtqCpt_tNj05dk7ndXM';//熊总
                         // openId = 'osT1v1InCXcpvRDENGmKrPzOD4HE';//余枫
-                        openId = 'osT1v1JC54LQUZNwRBzaBhvYL5wU';//my
+                        openId = 'osT1v1InCXcpvRDENGmKrPzOD4HE';//my
                         // openId='osT1v1P86Nsv8BnUkHpY1KmyI9Ws'
                         // openId = 'olGwuv5TzXRP1iieGEDYKAH7pOOo' //osT1v1MdPd5T96hedR4gFotaFI3c 'osT1v1JC54LQUZNwRBzaBhvYL5wU'//'olGwuv5TzXRP1iieGEDYKAH7pOOo';
                     } else { // 生产环境
@@ -259,7 +260,7 @@ router.beforeEach((to, from, next) => {
             }else if(to.path == '/member/integral'){
                 let openId = null;
                 if (process.env.NODE_ENV === 'development') {  // 开发环境
-                    openId = 'osT1v1JC54LQUZNwRBzaBhvYL5wU'// 'olGwuv5TzXRP1iieGEDYKAH7pOOo';
+                    openId = 'osT1v1InCXcpvRDENGmKrPzOD4HE'// 'olGwuv5TzXRP1iieGEDYKAH7pOOo';
                 } else { // 生产环境
                     openId = to.query.openId;
                 }

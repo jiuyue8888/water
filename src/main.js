@@ -10,7 +10,9 @@ import VConsole from 'vconsole' //微信浏览器调试工具
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard)
 Vue.use(ElementUI);
-
+if(!localStorage.getItem('url')||localStorage.getItem('url')!=document.location.href){
+	localStorage.setItem('url',document.location.href)
+}
 import 'lib-flexible'
 import i18n from './utils/i18n/index'
 
