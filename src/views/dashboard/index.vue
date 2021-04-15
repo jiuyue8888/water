@@ -410,7 +410,7 @@ export default {
 		  v++;
 		  this.v = v
 		  if(v==15){
-			  this.$message('v21-02-18-v1')
+			  this.$message('v21-04-12-v1')
 			  this.v = 0
 		  }
 	  },
