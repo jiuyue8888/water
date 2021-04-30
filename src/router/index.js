@@ -167,6 +167,9 @@ router.beforeEach((to, from, next) => {
     // console.log(to);
     //解除禁止页面滚动
     Vue.prototype.noScroll('remove')
+	if(!localStorage.getItem('url')||localStorage.getItem('url').indexOf('userId')<0){
+		localStorage.setItem('url',document.location.href)
+	}
 
     if (to.meta.title) {
         document.title = '澳門自來水·' + to.meta.title

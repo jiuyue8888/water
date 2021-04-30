@@ -38,9 +38,7 @@
 		name: 'App',
 		async created() {
 			
-			const id = this.getSearchString('userId').split('#')[0]
-			localStorage.setItem('shareId',id)
-			console.log('shareId',id)
+			
 
 			let result = await getLangState();
 			this.$config.memAreaSubStatus = result.data.memAreaSubStatus == 1;
@@ -61,6 +59,9 @@
 					localStorage.setItem('language','ZH')
 				}
 			}
+			const id = this.getSearchString('userId')&&this.getSearchString('userId').split('#')[0]
+			localStorage.setItem('shareId',id)
+			console.log('shareId',id)
 			
 		},
 		methods:{

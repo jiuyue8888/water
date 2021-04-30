@@ -28,7 +28,7 @@ const share = async (shareData) => {
 
         let title="澳門自來水·智慧水務"
         let desc="點擊進入智慧水務，享受線上快捷繳費，訂閱微信電子賬單，了解最新資訊動態。"
-        let link=hurl+'?userId='+localStorage.getItem('userId')
+        let link=hurl
 
         wx.onMenuShareAppMessage({
           title: title, // 分享标题

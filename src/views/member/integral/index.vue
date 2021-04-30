@@ -44,7 +44,21 @@
 		      <p class="award">{{$t('memberIntegral.font2')}}</p>
 		    </div>
 		  </div>
-		  <el-button @click="showShare(data.wxBillStatus)" :class="{ 'baby-blue' : data.wxBillStatus == 2, 'deep-blue' : data.wxBillStatus == 0 }" :type="data.wxBillStatus == 1 ? 'success' : ''" size="mini" round>{{ btnText(data.wxBillStatus) }}</el-button>
+		  <el-button @click="showShare(data.wxBillStatus)" :class="data.wxBillStatus == 2?'':'deep-blue'"
+		   :type="data.wxBillStatus == 2 ? 'success' : ''" size="mini" round>{{ btnText1(data.wxBillStatus) }}</el-button>
+		</li>
+		<li>
+		  <div class="left">
+		    <img src="../../../assets/images/iconnew.png" />
+		    <div class="text">
+		      <p class="title" v-html="$t('memberIntegral.font21')"></p>
+		      <p class="award">{{$t('memberIntegral.font6')}}</p>
+		    </div>
+		  </div>
+		  <el-button @click="dotask(data.userWxBillStatus)" :class="{ 'baby-blue' : data.userWxBillStatus == 2, 'deep-blue' : 
+		  data.userWxBillStatus == 0 }" :type="data.userWxBillStatus == 1 ? 'success' : ''" size="mini" round>
+		  {{ btnText(data.userWxBillStatus) }}</el-button>
+		  
 		</li>
       </ul>
     </div>
@@ -125,6 +139,21 @@ export default {
         return this.$t('memberIntegral.font12')
       }
     },
+	btnText1(state){
+	  if(state == 2){
+	    return this.$t('memberIntegral.font11')
+	  }else{
+		return this.$t('memberIntegral.font10')
+	  }
+	},
+	async dotask(id){
+		if(id==0){
+			this.$router.push('/bills');
+		}
+		if(id==1){
+			this.getIntegral('userwxbill',1);	
+		}
+	},
     //发起领积分接口
     async getIntegral(type, state){
       let data = {
@@ -135,6 +164,7 @@ export default {
       let res = await recommend(data);
       if(res.code == 200){
         this.$message(this.$t('memberIntegral.font13'));
+		this.scoreTask();
         if(type == 'contract'){
           this.data.bodynbStatus = 2;
         }else if(type == 'register'){
@@ -164,18 +194,61 @@ export default {
     },
 	async showShare(state){
 		const that = this
+		console.log('state11====',state)
 		if(state == 1){
+			that.showpop=true
 			let data = {
-			  taskType : 'wxbill',
-			  level : 2
+			  taskType : 'tuijian',
+			  level : 0,
+			  url:location.href.split('#')[0]
 			}
 		  let res = await recommend(data);
 		  if(res.code == 200){
 			  that.scoreTask();
+			  that.shareSet(res,{
+			  	title:"澳門自來水·智慧水務",
+			  	desc:"點擊進入智慧水務，享受線上快捷繳費，訂閱微信電子賬單，了解最新資訊動態。"
+			  },false)
+			  
 		  }
 		}else{
-		  that.showpop=true
+			this.getIntegral('wxbill',2);
 		}
+		this.scoreTask();
+		//else{
+		//  that.showpop=true
+		//}
+	},
+	shareSet(res,obj,type){
+		const that = this
+		wx.config({
+		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		    appId: that.$config.APPID, // 必填，公众号的唯一标识
+		    timestamp: res.result.timestamp, // 必填，生成签名的时间戳
+		    nonceStr: res.result.nonceStr, // 必填，生成签名的随机串
+		    signature: res.result.signature,// 必填，签名
+		    jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData', 'onMenuShareAppMessage', 'onMenuShareTimeline','hideMenuItems'],
+		});
+		
+		wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+		    wx.updateAppMessageShareData({
+		        title: obj.title, // 分享标题
+		        desc: obj.desc, // 分享描述
+		        link: "https://"+location.hostname+"?redirect=user&inviteCode=" + res.result.inviteCode+"&userId="+localStorage.getItem('userId'), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		        imgUrl: 'http://'+location.hostname+'/' + wxShareImg, // 分享图标
+		        success: function (res) {
+		          that.maskShow = type;
+		          console.log('成功',res);
+		          // 设置成功
+		        },
+		        fail: function(res){
+		          console.log('失败',res)
+		        }
+		    })
+		});
+		wx.error(function(res){
+		  console.log(res,'错误信息')
+		});
 	},
     //推薦好友註冊
     async onRecommend(state){
@@ -189,6 +262,11 @@ export default {
         }
         let res = await recommend(data);
         if(res.code == 200){
+			that.shareSet(res,{
+				title:JSON.parse(sessionStorage.userInfo).userName + that.$t('memberIntegral.font14'),
+				desc:that.$t('memberIntegral.font15')
+			},true)
+			/*
           wx.config({
               debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
               appId: that.$config.APPID, // 必填，公众号的唯一标识
@@ -217,6 +295,7 @@ export default {
           wx.error(function(res){
             console.log(res,'错误信息')
           });
+		  */
           // this.url = res.result.url;
           // this.copyUrlShow = true;
         }
@@ -268,7 +347,7 @@ export default {
 	  box-sizing: border-box;
       height: 100px;
       margin:15px auto;
-      padding:15px 21px 15px 20px;
+      padding:15px 11px 15px 10px;
       border-radius:8px;
       background:#fff;
       .left{
@@ -282,12 +361,12 @@ export default {
           line-height: 20px;
 		  width: 170px;
           .title{
-            font-size: 17px;
+            font-size: 14px;
             color: #333;
             font-weight: bold;
           }
           .award{
-            font-size: 14px;
+            font-size: 13px;
             color: #9DCB44;
           }
         }
