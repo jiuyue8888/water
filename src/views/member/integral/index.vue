@@ -41,7 +41,7 @@
 		    <img src="../../../assets/images/icon.png" />
 		    <div class="text">
 		      <p class="title" v-html="$t('memberIntegral.font20')"></p>
-		      <p class="award">{{$t('memberIntegral.font2')}}</p>
+		      <p class="award">{{$t('memberIntegral.font4')}}</p>
 		    </div>
 		  </div>
 		  <el-button @click="showShare(data.wxBillStatus)" :class="data.wxBillStatus == 2?'':'deep-blue'"
@@ -52,7 +52,7 @@
 		    <img src="../../../assets/images/iconnew.png" />
 		    <div class="text">
 		      <p class="title" v-html="$t('memberIntegral.font21')"></p>
-		      <p class="award">{{$t('memberIntegral.font6')}}</p>
+		      <p class="award">{{$t('memberIntegral.font22')}}</p>
 		    </div>
 		  </div>
 		  <el-button @click="dotask(data.userWxBillStatus)" :class="{ 'baby-blue' : data.userWxBillStatus == 2, 'deep-blue' : 

@@ -507,6 +507,7 @@ module.exports={
         font19: '複製失敗',
         font20: '邀請好友開通微信電子賬單',
         font21: '首次開通微信電子賬單',
+		font22: '獎勵300積分',
     },
     memberGift: {//s
         font1: '積分',
