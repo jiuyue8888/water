@@ -210,7 +210,7 @@ export default {
   },
   data(){
     return {
-		scrollPop:true,
+		scrollPop:false,
 		scroll:'',
 		targetUrl:'',
 		v:0,
@@ -334,7 +334,9 @@ export default {
     let result=await getBannerList()
     if(result.code==200){
       for(let i in result.data){
+		  
 		  if(result.data[i].type==2){
+			  that.scrollPop=true
 			  console.log('result.data[i]====',result.data[i])
 			  if(localStorage.getItem('language')=='EN'){
 				  if(result.data[i].bannerId%2==0){
@@ -351,6 +353,7 @@ export default {
 			  }
 			  
 		  }else{
+			  
 			  if(localStorage.getItem('language')=='EN'){
 			  			  if(result.data[i].bannerId%2==0){
 			  				  bannerList.push({
