@@ -218,11 +218,11 @@ export default {
   name: 'Bills',
   data(){
 	  let validateIdName = (rule, value, callback) => {
-	    //if (!validChinese(value)) {
-	     // callback(new Error('請輸入中文'));
-	    //} else {
+	    if (!value) {
+	      callback(new Error(this.$t("bills.font26")));
+	    } else {
 	      callback();
-	    //}
+	    }
 	  };
 	  
 	  let validateIdName2 = (rule, value, callback) => {
