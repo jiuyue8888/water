@@ -224,6 +224,13 @@ export default {
 	      callback();
 	    }
 	  };
+	  let validateIdName1 = (rule, value, callback) => {
+	    if (!value) {
+	      callback(new Error(this.$t("bills.font19")));
+	    } else {
+	      callback();
+	    }
+	  };
 	  
 	  let validateIdName2 = (rule, value, callback) => {
 	    if (!value) {
@@ -275,7 +282,7 @@ export default {
       },
       papersRules:{
         idType: [
-          { required: true, message: this.$t("bills.font19"), trigger: 'blur' },
+          { validator: validateIdName1, trigger: 'change' },
         ],
         idNb: [
           { validator: validateIdName2, trigger: 'blur' },
