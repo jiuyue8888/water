@@ -6,6 +6,17 @@
     <!-- 主体内容 -->
     <div class="body">
       <ul>
+		  <li>
+		    <div class="left">
+		      <svg-icon icon-class="register-member"></svg-icon>
+		      <div class="text">
+		        <p class="title">{{$t('memberIntegral.font3')}}</p>
+		        <p class="award">{{$t('memberIntegral.font4')}}</p>
+		      </div>
+		    </div>
+		    <el-button @click="onRegisterMember(data.registerStatus)" :class="{ 'baby-blue' : data.registerStatus == 2, 'deep-blue' : data.registerStatus == 0 }" :type="data.registerStatus == 1 ? 'success' : ''" size="mini" round>{{ btnText(data.registerStatus) }}</el-button>
+		  </li>
+		  
         <li>
           <div class="left">
             <svg-icon icon-class="firstbindi"></svg-icon>
@@ -17,16 +28,21 @@
           <el-button @click="onFirstbindi(data.bodynbStatus)" :class="{ 'baby-blue' : data.bodynbStatus == 2, 'deep-blue' : data.bodynbStatus == 0 }" :type="data.bodynbStatus == 1 ? 'success' : ''" size="mini" round>{{ btnText(data.bodynbStatus) }}</el-button>
         </li>
         <li>
-          <div class="left">
-            <svg-icon icon-class="register-member"></svg-icon>
-            <div class="text">
-              <p class="title">{{$t('memberIntegral.font3')}}</p>
-              <p class="award">{{$t('memberIntegral.font4')}}</p>
-            </div>
-          </div>
-          <el-button @click="onRegisterMember(data.registerStatus)" :class="{ 'baby-blue' : data.registerStatus == 2, 'deep-blue' : data.registerStatus == 0 }" :type="data.registerStatus == 1 ? 'success' : ''" size="mini" round>{{ btnText(data.registerStatus) }}</el-button>
-        </li>
-        <li>
+        		  <div class="left">
+        		    <img src="../../../assets/images/iconnew.png" />
+        		    <div class="text">
+        		      <p class="title" v-html="$t('memberIntegral.font21')"></p>
+        		      <p class="award">{{$t('memberIntegral.font22')}}</p>
+        		    </div>
+        		  </div>
+        		  <el-button @click="dotask(data.userWxBillStatus)" :class="{ 'baby-blue' : data.userWxBillStatus == 2, 'deep-blue' : 
+        		  data.userWxBillStatus == 0 }" :type="data.userWxBillStatus == 1 ? 'success' : ''" size="mini" round>
+        		  {{ btnText(data.userWxBillStatus) }}</el-button>
+        		  
+        		</li>
+        
+		
+		<li>
           <div class="left">
             <svg-icon icon-class="recommend"></svg-icon>
             <div class="text">
@@ -47,20 +63,7 @@
 		  <el-button @click="showShare(data.wxBillStatus)" :class="data.wxBillStatus == 2?'':'deep-blue'"
 		   :type="data.wxBillStatus == 2 ? 'success' : ''" size="mini" round>{{ btnText1(data.wxBillStatus) }}</el-button>
 		</li>
-		<li>
-		  <div class="left">
-		    <img src="../../../assets/images/iconnew.png" />
-		    <div class="text">
-		      <p class="title" v-html="$t('memberIntegral.font21')"></p>
-		      <p class="award">{{$t('memberIntegral.font22')}}</p>
-		    </div>
-		  </div>
-		  <el-button @click="dotask(data.userWxBillStatus)" :class="{ 'baby-blue' : data.userWxBillStatus == 2, 'deep-blue' : 
-		  data.userWxBillStatus == 0 }" :type="data.userWxBillStatus == 1 ? 'success' : ''" size="mini" round>
-		  {{ btnText(data.userWxBillStatus) }}</el-button>
-		  
-		</li>
-      </ul>
+		</ul>
     </div>
 	<div class="sharepop" v-show="showpop" @click="showpop=false">
 		<img src="../../../assets/images/shareen.png" v-if="lan=='EN'">
